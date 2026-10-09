@@ -1,0 +1,8 @@
+.gradle/
+build/
+.kotlin/
+local.properties
+.idea/
+.DS_Store
+xcuserdata/
+DerivedData/

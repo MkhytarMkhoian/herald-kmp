@@ -1,0 +1,377 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		429FB824A9B5F2FE19AD8BE3 /* HeraldInterop in Frameworks */ = {isa = PBXBuildFile; productRef = 32DB2631D019FE2AECF0BCD2 /* HeraldInterop */; };
+		7BF10B5B7020D671084EB3E3 /* HeraldKmpBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AD59C5819A5B5DCA71DADD /* HeraldKmpBridge.swift */; };
+		7F8F51B30CBB70C8A84663D4 /* HeraldCore in Frameworks */ = {isa = PBXBuildFile; productRef = 707DBD56B745142384C45B46 /* HeraldCore */; };
+		B4DDD4E99F772DA655D57CC1 /* HeraldLog in Frameworks */ = {isa = PBXBuildFile; productRef = C110ECF6EB798AC222EE3587 /* HeraldLog */; };
+		F277E543933A726F9821FB6D /* KmpSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788EC18743879163F55E78F8 /* KmpSampleApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		788EC18743879163F55E78F8 /* KmpSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KmpSampleApp.swift; sourceTree = "<group>"; };
+		C8AD59C5819A5B5DCA71DADD /* HeraldKmpBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeraldKmpBridge.swift; sourceTree = "<group>"; };
+		D8F2545D2AB3C2166351E8A1 /* KmpSample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = KmpSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2947D15115DFEEB601C2F42 /* herald-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "herald-ios"; path = "../../../herald-ios"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A996204A4433EBF642A9FDA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F8F51B30CBB70C8A84663D4 /* HeraldCore in Frameworks */,
+				B4DDD4E99F772DA655D57CC1 /* HeraldLog in Frameworks */,
+				429FB824A9B5F2FE19AD8BE3 /* HeraldInterop in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A30F8C5D9DD8C5ABD3DBC40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8F2545D2AB3C2166351E8A1 /* KmpSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C03FB098F221FF4ED27CAEE6 = {
+			isa = PBXGroup;
+			children = (
+				EB95C4D1A4729A80B12BD448 /* App */,
+				E45E37B5B2F5875B26A900D3 /* Packages */,
+				1A30F8C5D9DD8C5ABD3DBC40 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E45E37B5B2F5875B26A900D3 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				F2947D15115DFEEB601C2F42 /* herald-ios */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		EB95C4D1A4729A80B12BD448 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C8AD59C5819A5B5DCA71DADD /* HeraldKmpBridge.swift */,
+				788EC18743879163F55E78F8 /* KmpSampleApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13C4CEAD30D035B183E152FF /* KmpSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D9BDC09B62A28390C6678EA /* Build configuration list for PBXNativeTarget "KmpSample" */;
+			buildPhases = (
+				E33982CBFCA91B4E1807B6B5 /* Build the shared Kotlin framework */,
+				0BDAF82831C7D457A94054EF /* Sources */,
+				A996204A4433EBF642A9FDA4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KmpSample;
+			packageProductDependencies = (
+				707DBD56B745142384C45B46 /* HeraldCore */,
+				C110ECF6EB798AC222EE3587 /* HeraldLog */,
+				32DB2631D019FE2AECF0BCD2 /* HeraldInterop */,
+			);
+			productName = KmpSample;
+			productReference = D8F2545D2AB3C2166351E8A1 /* KmpSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBBCDA05F905443F72517B1A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 85522603CE1F876CB5AFB511 /* Build configuration list for PBXProject "KmpSample" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C03FB098F221FF4ED27CAEE6;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				38358B672E177525B0630A11 /* XCLocalSwiftPackageReference "../../../herald-ios" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1A30F8C5D9DD8C5ABD3DBC40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13C4CEAD30D035B183E152FF /* KmpSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E33982CBFCA91B4E1807B6B5 /* Build the shared Kotlin framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build the shared Kotlin framework";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$SRCROOT/../..\" && ./gradlew :sample:shared:embedAndSignAppleFrameworkForXcode";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0BDAF82831C7D457A94054EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BF10B5B7020D671084EB3E3 /* HeraldKmpBridge.swift in Sources */,
+				F277E543933A726F9821FB6D /* KmpSampleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1602B8C6A8734367B0BADBE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					Shared,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.mkhytarmkhoian.herald.kmp.KmpSample;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80BCEFB05C355670F6050CCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					Shared,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.mkhytarmkhoian.herald.kmp.KmpSample;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A62B83646439397806B00FFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B9E6D96F06AAA94B9DD622E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D9BDC09B62A28390C6678EA /* Build configuration list for PBXNativeTarget "KmpSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1602B8C6A8734367B0BADBE0 /* Debug */,
+				80BCEFB05C355670F6050CCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		85522603CE1F876CB5AFB511 /* Build configuration list for PBXProject "KmpSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9E6D96F06AAA94B9DD622E4 /* Debug */,
+				A62B83646439397806B00FFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		38358B672E177525B0630A11 /* XCLocalSwiftPackageReference "../../../herald-ios" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../herald-ios";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		32DB2631D019FE2AECF0BCD2 /* HeraldInterop */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HeraldInterop;
+		};
+		707DBD56B745142384C45B46 /* HeraldCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HeraldCore;
+		};
+		C110ECF6EB798AC222EE3587 /* HeraldLog */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HeraldLog;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = EBBCDA05F905443F72517B1A /* Project object */;
+}

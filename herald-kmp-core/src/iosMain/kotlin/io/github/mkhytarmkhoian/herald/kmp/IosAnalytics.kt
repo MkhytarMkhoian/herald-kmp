@@ -1,0 +1,84 @@
+package io.github.mkhytarmkhoian.herald.kmp
+
+/**
+ * The analytics shared code uses on iOS. It passes every call to [bridge], which the iOS app
+ * implements in Swift on top of herald-ios`s `HeraldBridge`:
+ *
+ * ```swift
+ * let herald = Herald(providers: [firebaseProvider()])  // herald-ios, set up as usual
+ * let analytics = IosAnalytics(bridge: HeraldKmpBridge(HeraldBridge(herald)))
+ * ```
+ */
+public class IosAnalytics(private val bridge: IosHeraldBridge) :
+    EventTrackerService,
+    PropertyTrackerService,
+    IdentifiableUserService,
+    AnalyticsLifecycleService,
+    ConsentService {
+
+    override suspend fun track(event: Event) {
+        val markers = if (event is ScreenViewEvent) setOf(SCREEN_VIEW_MARKER) else emptySet()
+        bridge.track(event.name, event.parameters.mapValues { (_, value) -> value.toBridge() }, markers)
+    }
+
+    override suspend fun set(property: Property) {
+        bridge.set(property.name, property.value.toBridge(), property is UserProperty)
+    }
+
+    override suspend fun identify(identity: Identity): Unit = bridge.identify(identity.userId)
+
+    override suspend fun reset(): Unit = bridge.reset()
+
+    override suspend fun start(): Unit = bridge.start()
+
+    override suspend fun flush(): Unit = bridge.flush()
+
+    override suspend fun setEnabled(enabled: Boolean): Unit = bridge.setEnabled(enabled)
+
+    private companion object {
+        const val SCREEN_VIEW_MARKER = "screen_view"
+    }
+}
+
+/**
+ * What the iOS app implements in Swift, usually by calling herald-ios`s `HeraldBridge`. Plain,
+ * synchronous functions, so the Swift side stays simple.
+ */
+public interface IosHeraldBridge {
+    public fun track(name: String, parameters: Map<String, IosBridgeValue>, markers: Set<String>)
+
+    public fun set(name: String, value: IosBridgeValue, isUserProperty: Boolean)
+
+    public fun identify(userId: String)
+
+    public fun reset()
+
+    public fun start()
+
+    public fun flush()
+
+    public fun setEnabled(enabled: Boolean)
+}
+
+/**
+ * A parameter value on its way to Swift. herald-ios knows four types, so a Long arrives as an Int
+ * (64-bit in Swift) and a Float as a Double.
+ */
+public class IosBridgeValue internal constructor(
+    public val type: IosBridgeValueType,
+    public val string: String = "",
+    public val int: Long = 0,
+    public val double: Double = 0.0,
+    public val bool: Boolean = false,
+)
+
+public enum class IosBridgeValueType { STRING, INT, DOUBLE, BOOL }
+
+internal fun AnalyticsValue.toBridge(): IosBridgeValue = when (this) {
+    is AnalyticsValue.String -> IosBridgeValue(IosBridgeValueType.STRING, string = value)
+    is AnalyticsValue.Int -> IosBridgeValue(IosBridgeValueType.INT, int = value.toLong())
+    is AnalyticsValue.Long -> IosBridgeValue(IosBridgeValueType.INT, int = value)
+    is AnalyticsValue.Float -> IosBridgeValue(IosBridgeValueType.DOUBLE, double = value.toDouble())
+    is AnalyticsValue.Double -> IosBridgeValue(IosBridgeValueType.DOUBLE, double = value)
+    is AnalyticsValue.Boolean -> IosBridgeValue(IosBridgeValueType.BOOL, bool = value)
+}
