@@ -17,8 +17,12 @@ public class IosAnalytics(private val bridge: IosHeraldBridge) :
     ConsentService {
 
     override suspend fun track(event: Event) {
-        val markers = if (event is ScreenViewEvent) setOf(SCREEN_VIEW_MARKER) else emptySet()
-        bridge.track(event.name, event.parameters.mapValues { (_, value) -> value.toBridge() }, markers)
+        bridge.track(
+            name = event.name,
+            parameters = event.parameters.mapValues { (_, value) -> value.toBridge() },
+            isScreenView = event is ScreenViewEvent,
+            event = event,
+        )
     }
 
     override suspend fun set(property: Property) {
@@ -34,10 +38,6 @@ public class IosAnalytics(private val bridge: IosHeraldBridge) :
     override suspend fun flush(): Unit = bridge.flush()
 
     override suspend fun setEnabled(enabled: Boolean): Unit = bridge.setEnabled(enabled)
-
-    private companion object {
-        const val SCREEN_VIEW_MARKER = "screen_view"
-    }
 }
 
 /**
@@ -45,7 +45,16 @@ public class IosAnalytics(private val bridge: IosHeraldBridge) :
  * synchronous functions, so the Swift side stays simple.
  */
 public interface IosHeraldBridge {
-    public fun track(name: String, parameters: Map<String, IosBridgeValue>, markers: Set<String>)
+    /**
+     * [event] is the original object, so Swift can check your shared labels on it:
+     * `event.kotlinEvent is PersonalDataEvent`.
+     */
+    public fun track(
+        name: String,
+        parameters: Map<String, IosBridgeValue>,
+        isScreenView: Boolean,
+        event: Event,
+    )
 
     public fun set(name: String, value: IosBridgeValue, isUserProperty: Boolean)
 

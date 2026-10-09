@@ -6,33 +6,47 @@ import SwiftUI
 
 @main
 struct KmpSampleApp: App {
-    private let viewModel: CheckoutViewModel
+    private let checkout: CheckoutViewModel
+    private let profile: ProfileViewModel
 
     init() {
-        // herald-ios, set up in Swift as in any iOS app.
-        let logger: AnalyticsLogger = { message in print(message) }
-        let log = LogAnalyticsTrackerService(
-            eventTrackerFactory: CompositeLogEventTrackerFactory([
-                ScreenViewLogEventTrackerFactory(logger: logger),
-                GenericLogEventTrackerFactory(logger: logger),
-            ]),
-            propertySetterFactory: GenericLogPropertySetterFactory(logger: logger)
-        )
-        let herald = Herald(providers: [HeraldProvider(name: "log", events: log, properties: log)])
+        // herald-ios, set up in Swift as in any iOS app: two logs, one without personal data.
+        let all = Self.log(prefix: "[all]", rules: [])
+        let filtered = Self.log(prefix: "[no-personal-data]", rules: [NoPersonalDataLogFactory()])
+        let herald = Herald(providers: [
+            HeraldProvider(name: "all", events: all, properties: all),
+            HeraldProvider(name: "no-personal-data", events: filtered, properties: filtered),
+        ])
 
-        // The shared Kotlin view model gets herald-ios through the bridge.
+        // The shared Kotlin view models get herald-ios through the bridge.
         let analytics = IosAnalytics(bridge: HeraldKmpBridge(HeraldBridge(herald)))
-        viewModel = CheckoutViewModel(analytics: analytics)
+        checkout = CheckoutViewModel(analytics: analytics)
+        profile = ProfileViewModel(analytics: analytics, properties: analytics)
     }
 
     var body: some Scene {
         WindowGroup {
             Text("herald-kmp trial")
                 .task {
-                    try? await viewModel.opened()
-                    try? await viewModel.started(plan: "pro", seats: 2)
+                    try? await checkout.opened()
+                    try? await profile.opened(userId: "u42")
+                    try? await profile.themeChanged(dark: true)
                     print("KMP TRIAL DONE")
                 }
         }
+    }
+
+    private static func log(prefix: String, rules: [any LogEventTrackerFactory])
+        -> LogAnalyticsTrackerService
+    {
+        let logger: AnalyticsLogger = { message in print("\(prefix) \(message)") }
+        return LogAnalyticsTrackerService(
+            eventTrackerFactory: CompositeLogEventTrackerFactory(
+                rules + [
+                    ScreenViewLogEventTrackerFactory(logger: logger),
+                    GenericLogEventTrackerFactory(logger: logger),
+                ]),
+            propertySetterFactory: GenericLogPropertySetterFactory(logger: logger)
+        )
     }
 }

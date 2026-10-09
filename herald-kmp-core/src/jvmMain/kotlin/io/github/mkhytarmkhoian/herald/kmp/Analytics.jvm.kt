@@ -32,3 +32,23 @@ public actual typealias ParametersBuilder = io.github.mkhytarmkhoian.herald.Para
 
 public actual fun parameters(block: ParametersBuilder.() -> Unit): Map<String, AnalyticsValue> =
     io.github.mkhytarmkhoian.herald.parameters(block)
+
+public actual object AnalyticsValues {
+    public actual fun string(value: String): AnalyticsValue =
+        io.github.mkhytarmkhoian.herald.AnalyticsValue.String(value)
+
+    public actual fun int(value: Int): AnalyticsValue =
+        io.github.mkhytarmkhoian.herald.AnalyticsValue.Int(value)
+
+    public actual fun long(value: Long): AnalyticsValue =
+        io.github.mkhytarmkhoian.herald.AnalyticsValue.Long(value)
+
+    public actual fun float(value: Float): AnalyticsValue =
+        io.github.mkhytarmkhoian.herald.AnalyticsValue.Float(value)
+
+    public actual fun double(value: Double): AnalyticsValue =
+        io.github.mkhytarmkhoian.herald.AnalyticsValue.Double(value)
+
+    public actual fun bool(value: Boolean): AnalyticsValue =
+        io.github.mkhytarmkhoian.herald.AnalyticsValue.Boolean(value)
+}

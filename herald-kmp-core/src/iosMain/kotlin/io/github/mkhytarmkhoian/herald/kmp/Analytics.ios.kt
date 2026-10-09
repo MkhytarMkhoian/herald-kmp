@@ -95,3 +95,17 @@ public actual class ParametersBuilder internal constructor() {
 
     internal fun build(): Map<String, AnalyticsValue> = values.toMap()
 }
+
+public actual object AnalyticsValues {
+    public actual fun string(value: String): AnalyticsValue = AnalyticsValue.String(value)
+
+    public actual fun int(value: Int): AnalyticsValue = AnalyticsValue.Int(value)
+
+    public actual fun long(value: Long): AnalyticsValue = AnalyticsValue.Long(value)
+
+    public actual fun float(value: Float): AnalyticsValue = AnalyticsValue.Float(value)
+
+    public actual fun double(value: Double): AnalyticsValue = AnalyticsValue.Double(value)
+
+    public actual fun bool(value: Boolean): AnalyticsValue = AnalyticsValue.Boolean(value)
+}

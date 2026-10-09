@@ -101,3 +101,27 @@ public expect class ParametersBuilder {
 
     public fun put(name: String, value: Boolean)
 }
+
+/**
+ * Makes an [AnalyticsValue], for a [Property]'s value:
+ *
+ * ```kotlin
+ * override val value = AnalyticsValues.string(if (dark) "dark" else "light")
+ * ```
+ *
+ * Shared code can't write `AnalyticsValue.String("dark")`: on Android, [AnalyticsValue] is the
+ * Android SDK's type, and Kotlin doesn't reach nested classes through that link.
+ */
+public expect object AnalyticsValues {
+    public fun string(value: String): AnalyticsValue
+
+    public fun int(value: Int): AnalyticsValue
+
+    public fun long(value: Long): AnalyticsValue
+
+    public fun float(value: Float): AnalyticsValue
+
+    public fun double(value: Double): AnalyticsValue
+
+    public fun bool(value: Boolean): AnalyticsValue
+}
