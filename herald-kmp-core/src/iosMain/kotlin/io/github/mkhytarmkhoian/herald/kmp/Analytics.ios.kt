@@ -1,22 +1,35 @@
+@file:OptIn(ExperimentalObjCName::class)
+
 package io.github.mkhytarmkhoian.herald.kmp
+
+import kotlin.experimental.ExperimentalObjCName
+import kotlin.native.ObjCName
 
 // On iOS, each shared type is a Kotlin twin of the Android SDK's, so shared code reads the same on
 // both. IosAnalytics passes the calls on to herald-ios.
+//
+// herald-ios has types with the same names, so Swift sees these with "Kotlin" in front:
+// KotlinEvent, KotlinProperty and so on. Kotlin code uses the plain names.
 
+@ObjCName(swiftName = "KotlinEvent")
 public actual interface Event {
     public actual val name: String
     public actual val parameters: Map<String, AnalyticsValue> get() = emptyMap()
 }
 
+@ObjCName(swiftName = "KotlinScreenViewEvent")
 public actual interface ScreenViewEvent : Event
 
+@ObjCName(swiftName = "KotlinProperty")
 public actual interface Property {
     public actual val name: String
     public actual val value: AnalyticsValue
 }
 
+@ObjCName(swiftName = "KotlinUserProperty")
 public actual interface UserProperty : Property
 
+@ObjCName(swiftName = "KotlinAnalyticsValue")
 public actual sealed interface AnalyticsValue {
     public actual value class String(public actual val value: kotlin.String) : AnalyticsValue
 
@@ -31,6 +44,7 @@ public actual sealed interface AnalyticsValue {
     public actual value class Boolean(public actual val value: kotlin.Boolean) : AnalyticsValue
 }
 
+@ObjCName(swiftName = "KotlinIdentity")
 public actual class Identity actual constructor(public actual val userId: String) {
     override fun equals(other: Any?): Boolean = other is Identity && other.userId == userId
 
@@ -39,26 +53,31 @@ public actual class Identity actual constructor(public actual val userId: String
     override fun toString(): String = "Identity(…)"
 }
 
+@ObjCName(swiftName = "KotlinEventTrackerService")
 public actual fun interface EventTrackerService {
     public actual suspend fun track(event: Event)
 }
 
+@ObjCName(swiftName = "KotlinPropertyTrackerService")
 public actual fun interface PropertyTrackerService {
     public actual suspend fun set(property: Property)
 }
 
+@ObjCName(swiftName = "KotlinIdentifiableUserService")
 public actual interface IdentifiableUserService {
     public actual suspend fun identify(identity: Identity)
 
     public actual suspend fun reset()
 }
 
+@ObjCName(swiftName = "KotlinAnalyticsLifecycleService")
 public actual interface AnalyticsLifecycleService {
     public actual suspend fun start()
 
     public actual suspend fun flush() {}
 }
 
+@ObjCName(swiftName = "KotlinConsentService")
 public actual interface ConsentService {
     public actual suspend fun setEnabled(enabled: Boolean)
 }
