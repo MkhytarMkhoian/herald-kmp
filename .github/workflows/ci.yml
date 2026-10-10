@@ -1,0 +1,58 @@
+# Checks every push and pull request: the tests on the JVM, against the real Android Herald, and in
+# the iOS Simulator; and the iOS sample app, built against herald-ios.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v5
+
+      - name: Tests on the JVM and in the iOS Simulator
+        run: SIMULATOR_ID=$(scripts/simulator.sh) ./gradlew check
+
+      - uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: test-reports
+          path: '**/build/reports/tests/'
+
+  sample:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v5
+
+      # The sample uses herald-ios from the folder next to this one, as on a developer's machine.
+      # HeraldInterop is on herald-ios's kmp-bridge branch until it's released.
+      - name: Check out herald-ios
+        run: |
+          git clone --depth 1 --branch kmp-bridge https://github.com/MkhytarMkhoian/herald-ios \
+            ../herald-ios
+
+      - name: Build the iOS sample app
+        run: |
+          xcodebuild build -project sample/iosApp/KmpSample.xcodeproj -scheme KmpSample \
+            -destination "id=$(scripts/simulator.sh)" -quiet
