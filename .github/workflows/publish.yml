@@ -1,0 +1,35 @@
+# Publishes every module to Maven Central when a `v*` tag is pushed. The version is the tag without
+# its `v`, overriding the -SNAPSHOT in gradle.properties.
+#
+# It runs on a Mac, because the iOS parts can only be built there.
+#
+# Needs four repository secrets, the same as in the Android repo:
+#   MAVEN_CENTRAL_USERNAME / MAVEN_CENTRAL_PASSWORD — a Central Portal user token
+#   SIGNING_KEY                                     — ASCII-armored GPG private key
+#   SIGNING_KEY_PASSWORD                            — its passphrase
+name: Publish
+
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  publish:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v5
+
+      - name: Publish and release
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.SIGNING_KEY }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
+        run: ./gradlew publishAndReleaseToMavenCentral -Pversion=${GITHUB_REF_NAME#v}

@@ -1,0 +1,196 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <io.github.mkhytarmkhoian:herald-kmp-core>
+final enum class io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType : kotlin/Enum<io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType> { // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType|null[0]
+    enum entry BOOL // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType.BOOL|null[0]
+    enum entry DOUBLE // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType.DOUBLE|null[0]
+    enum entry INT // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType.INT|null[0]
+    enum entry STRING // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType.STRING|null[0]
+
+    final val entries // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType> // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType> // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType.values|values#static(){}[0]
+}
+
+abstract fun interface io.github.mkhytarmkhoian.herald.kmp/EventTrackerService { // io.github.mkhytarmkhoian.herald.kmp/EventTrackerService|null[0]
+    abstract suspend fun track(io.github.mkhytarmkhoian.herald.kmp/Event) // io.github.mkhytarmkhoian.herald.kmp/EventTrackerService.track|track(io.github.mkhytarmkhoian.herald.kmp.Event){}[0]
+}
+
+abstract fun interface io.github.mkhytarmkhoian.herald.kmp/PropertyTrackerService { // io.github.mkhytarmkhoian.herald.kmp/PropertyTrackerService|null[0]
+    abstract suspend fun set(io.github.mkhytarmkhoian.herald.kmp/Property) // io.github.mkhytarmkhoian.herald.kmp/PropertyTrackerService.set|set(io.github.mkhytarmkhoian.herald.kmp.Property){}[0]
+}
+
+abstract interface io.github.mkhytarmkhoian.herald.kmp/AnalyticsLifecycleService { // io.github.mkhytarmkhoian.herald.kmp/AnalyticsLifecycleService|null[0]
+    abstract suspend fun start() // io.github.mkhytarmkhoian.herald.kmp/AnalyticsLifecycleService.start|start(){}[0]
+    open suspend fun flush() // io.github.mkhytarmkhoian.herald.kmp/AnalyticsLifecycleService.flush|flush(){}[0]
+}
+
+abstract interface io.github.mkhytarmkhoian.herald.kmp/ConsentService { // io.github.mkhytarmkhoian.herald.kmp/ConsentService|null[0]
+    abstract suspend fun setEnabled(kotlin/Boolean) // io.github.mkhytarmkhoian.herald.kmp/ConsentService.setEnabled|setEnabled(kotlin.Boolean){}[0]
+}
+
+abstract interface io.github.mkhytarmkhoian.herald.kmp/Event { // io.github.mkhytarmkhoian.herald.kmp/Event|null[0]
+    abstract val name // io.github.mkhytarmkhoian.herald.kmp/Event.name|{}name[0]
+        abstract fun <get-name>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp/Event.name.<get-name>|<get-name>(){}[0]
+    open val parameters // io.github.mkhytarmkhoian.herald.kmp/Event.parameters|{}parameters[0]
+        open fun <get-parameters>(): kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> // io.github.mkhytarmkhoian.herald.kmp/Event.parameters.<get-parameters>|<get-parameters>(){}[0]
+}
+
+abstract interface io.github.mkhytarmkhoian.herald.kmp/IdentifiableUserService { // io.github.mkhytarmkhoian.herald.kmp/IdentifiableUserService|null[0]
+    abstract suspend fun identify(io.github.mkhytarmkhoian.herald.kmp/Identity) // io.github.mkhytarmkhoian.herald.kmp/IdentifiableUserService.identify|identify(io.github.mkhytarmkhoian.herald.kmp.Identity){}[0]
+    abstract suspend fun reset() // io.github.mkhytarmkhoian.herald.kmp/IdentifiableUserService.reset|reset(){}[0]
+}
+
+abstract interface io.github.mkhytarmkhoian.herald.kmp/IosHeraldBridge { // io.github.mkhytarmkhoian.herald.kmp/IosHeraldBridge|null[0]
+    abstract fun flush() // io.github.mkhytarmkhoian.herald.kmp/IosHeraldBridge.flush|flush(){}[0]
+    abstract fun identify(kotlin/String) // io.github.mkhytarmkhoian.herald.kmp/IosHeraldBridge.identify|identify(kotlin.String){}[0]
+    abstract fun reset() // io.github.mkhytarmkhoian.herald.kmp/IosHeraldBridge.reset|reset(){}[0]
+    abstract fun set(kotlin/String, io.github.mkhytarmkhoian.herald.kmp/IosBridgeValue, kotlin/Boolean) // io.github.mkhytarmkhoian.herald.kmp/IosHeraldBridge.set|set(kotlin.String;io.github.mkhytarmkhoian.herald.kmp.IosBridgeValue;kotlin.Boolean){}[0]
+    abstract fun setEnabled(kotlin/Boolean) // io.github.mkhytarmkhoian.herald.kmp/IosHeraldBridge.setEnabled|setEnabled(kotlin.Boolean){}[0]
+    abstract fun start() // io.github.mkhytarmkhoian.herald.kmp/IosHeraldBridge.start|start(){}[0]
+    abstract fun track(kotlin/String, kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/IosBridgeValue>, kotlin/Boolean, kotlin/Boolean, io.github.mkhytarmkhoian.herald.kmp/Event) // io.github.mkhytarmkhoian.herald.kmp/IosHeraldBridge.track|track(kotlin.String;kotlin.collections.Map<kotlin.String,io.github.mkhytarmkhoian.herald.kmp.IosBridgeValue>;kotlin.Boolean;kotlin.Boolean;io.github.mkhytarmkhoian.herald.kmp.Event){}[0]
+}
+
+abstract interface io.github.mkhytarmkhoian.herald.kmp/IosVendorEvent : io.github.mkhytarmkhoian.herald.kmp/Event // io.github.mkhytarmkhoian.herald.kmp/IosVendorEvent|null[0]
+
+abstract interface io.github.mkhytarmkhoian.herald.kmp/Property { // io.github.mkhytarmkhoian.herald.kmp/Property|null[0]
+    abstract val name // io.github.mkhytarmkhoian.herald.kmp/Property.name|{}name[0]
+        abstract fun <get-name>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp/Property.name.<get-name>|<get-name>(){}[0]
+    abstract val value // io.github.mkhytarmkhoian.herald.kmp/Property.value|{}value[0]
+        abstract fun <get-value>(): io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue // io.github.mkhytarmkhoian.herald.kmp/Property.value.<get-value>|<get-value>(){}[0]
+}
+
+abstract interface io.github.mkhytarmkhoian.herald.kmp/ScreenViewEvent : io.github.mkhytarmkhoian.herald.kmp/Event // io.github.mkhytarmkhoian.herald.kmp/ScreenViewEvent|null[0]
+
+abstract interface io.github.mkhytarmkhoian.herald.kmp/UserProperty : io.github.mkhytarmkhoian.herald.kmp/Property // io.github.mkhytarmkhoian.herald.kmp/UserProperty|null[0]
+
+sealed interface io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue { // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue|null[0]
+    final value class Boolean : io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue { // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Boolean|null[0]
+        constructor <init>(kotlin/Boolean) // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Boolean.<init>|<init>(kotlin.Boolean){}[0]
+
+        final val value // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Boolean.value|{}value[0]
+            final fun <get-value>(): kotlin/Boolean // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Boolean.value.<get-value>|<get-value>(){}[0]
+
+        final fun equals(kotlin/Any?): kotlin/Boolean // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Boolean.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Boolean.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Boolean.toString|toString(){}[0]
+    }
+
+    final value class Double : io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue { // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Double|null[0]
+        constructor <init>(kotlin/Double) // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Double.<init>|<init>(kotlin.Double){}[0]
+
+        final val value // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Double.value|{}value[0]
+            final fun <get-value>(): kotlin/Double // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Double.value.<get-value>|<get-value>(){}[0]
+
+        final fun equals(kotlin/Any?): kotlin/Boolean // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Double.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Double.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Double.toString|toString(){}[0]
+    }
+
+    final value class Float : io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue { // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Float|null[0]
+        constructor <init>(kotlin/Float) // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Float.<init>|<init>(kotlin.Float){}[0]
+
+        final val value // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Float.value|{}value[0]
+            final fun <get-value>(): kotlin/Float // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Float.value.<get-value>|<get-value>(){}[0]
+
+        final fun equals(kotlin/Any?): kotlin/Boolean // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Float.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Float.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Float.toString|toString(){}[0]
+    }
+
+    final value class Int : io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue { // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Int|null[0]
+        constructor <init>(kotlin/Int) // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Int.<init>|<init>(kotlin.Int){}[0]
+
+        final val value // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Int.value|{}value[0]
+            final fun <get-value>(): kotlin/Int // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Int.value.<get-value>|<get-value>(){}[0]
+
+        final fun equals(kotlin/Any?): kotlin/Boolean // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Int.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Int.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Int.toString|toString(){}[0]
+    }
+
+    final value class Long : io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue { // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Long|null[0]
+        constructor <init>(kotlin/Long) // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Long.<init>|<init>(kotlin.Long){}[0]
+
+        final val value // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Long.value|{}value[0]
+            final fun <get-value>(): kotlin/Long // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Long.value.<get-value>|<get-value>(){}[0]
+
+        final fun equals(kotlin/Any?): kotlin/Boolean // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Long.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Long.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.Long.toString|toString(){}[0]
+    }
+
+    final value class String : io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue { // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.String|null[0]
+        constructor <init>(kotlin/String) // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.String.<init>|<init>(kotlin.String){}[0]
+
+        final val value // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.String.value|{}value[0]
+            final fun <get-value>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.String.value.<get-value>|<get-value>(){}[0]
+
+        final fun equals(kotlin/Any?): kotlin/Boolean // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.String.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.String.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue.String.toString|toString(){}[0]
+    }
+}
+
+final class io.github.mkhytarmkhoian.herald.kmp/Identity { // io.github.mkhytarmkhoian.herald.kmp/Identity|null[0]
+    constructor <init>(kotlin/String) // io.github.mkhytarmkhoian.herald.kmp/Identity.<init>|<init>(kotlin.String){}[0]
+
+    final val userId // io.github.mkhytarmkhoian.herald.kmp/Identity.userId|{}userId[0]
+        final fun <get-userId>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp/Identity.userId.<get-userId>|<get-userId>(){}[0]
+
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.mkhytarmkhoian.herald.kmp/Identity.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.mkhytarmkhoian.herald.kmp/Identity.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp/Identity.toString|toString(){}[0]
+}
+
+final class io.github.mkhytarmkhoian.herald.kmp/IosAnalytics : io.github.mkhytarmkhoian.herald.kmp/AnalyticsLifecycleService, io.github.mkhytarmkhoian.herald.kmp/ConsentService, io.github.mkhytarmkhoian.herald.kmp/EventTrackerService, io.github.mkhytarmkhoian.herald.kmp/IdentifiableUserService, io.github.mkhytarmkhoian.herald.kmp/PropertyTrackerService { // io.github.mkhytarmkhoian.herald.kmp/IosAnalytics|null[0]
+    constructor <init>(io.github.mkhytarmkhoian.herald.kmp/IosHeraldBridge) // io.github.mkhytarmkhoian.herald.kmp/IosAnalytics.<init>|<init>(io.github.mkhytarmkhoian.herald.kmp.IosHeraldBridge){}[0]
+
+    final suspend fun flush() // io.github.mkhytarmkhoian.herald.kmp/IosAnalytics.flush|flush(){}[0]
+    final suspend fun identify(io.github.mkhytarmkhoian.herald.kmp/Identity) // io.github.mkhytarmkhoian.herald.kmp/IosAnalytics.identify|identify(io.github.mkhytarmkhoian.herald.kmp.Identity){}[0]
+    final suspend fun reset() // io.github.mkhytarmkhoian.herald.kmp/IosAnalytics.reset|reset(){}[0]
+    final suspend fun set(io.github.mkhytarmkhoian.herald.kmp/Property) // io.github.mkhytarmkhoian.herald.kmp/IosAnalytics.set|set(io.github.mkhytarmkhoian.herald.kmp.Property){}[0]
+    final suspend fun setEnabled(kotlin/Boolean) // io.github.mkhytarmkhoian.herald.kmp/IosAnalytics.setEnabled|setEnabled(kotlin.Boolean){}[0]
+    final suspend fun start() // io.github.mkhytarmkhoian.herald.kmp/IosAnalytics.start|start(){}[0]
+    final suspend fun track(io.github.mkhytarmkhoian.herald.kmp/Event) // io.github.mkhytarmkhoian.herald.kmp/IosAnalytics.track|track(io.github.mkhytarmkhoian.herald.kmp.Event){}[0]
+}
+
+final class io.github.mkhytarmkhoian.herald.kmp/IosBridgeValue { // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValue|null[0]
+    final val bool // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValue.bool|{}bool[0]
+        final fun <get-bool>(): kotlin/Boolean // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValue.bool.<get-bool>|<get-bool>(){}[0]
+    final val double // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValue.double|{}double[0]
+        final fun <get-double>(): kotlin/Double // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValue.double.<get-double>|<get-double>(){}[0]
+    final val int // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValue.int|{}int[0]
+        final fun <get-int>(): kotlin/Long // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValue.int.<get-int>|<get-int>(){}[0]
+    final val string // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValue.string|{}string[0]
+        final fun <get-string>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValue.string.<get-string>|<get-string>(){}[0]
+    final val type // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValue.type|{}type[0]
+        final fun <get-type>(): io.github.mkhytarmkhoian.herald.kmp/IosBridgeValueType // io.github.mkhytarmkhoian.herald.kmp/IosBridgeValue.type.<get-type>|<get-type>(){}[0]
+}
+
+final class io.github.mkhytarmkhoian.herald.kmp/ParametersBuilder { // io.github.mkhytarmkhoian.herald.kmp/ParametersBuilder|null[0]
+    final fun put(kotlin/String, kotlin/Boolean) // io.github.mkhytarmkhoian.herald.kmp/ParametersBuilder.put|put(kotlin.String;kotlin.Boolean){}[0]
+    final fun put(kotlin/String, kotlin/Double) // io.github.mkhytarmkhoian.herald.kmp/ParametersBuilder.put|put(kotlin.String;kotlin.Double){}[0]
+    final fun put(kotlin/String, kotlin/Float) // io.github.mkhytarmkhoian.herald.kmp/ParametersBuilder.put|put(kotlin.String;kotlin.Float){}[0]
+    final fun put(kotlin/String, kotlin/Int) // io.github.mkhytarmkhoian.herald.kmp/ParametersBuilder.put|put(kotlin.String;kotlin.Int){}[0]
+    final fun put(kotlin/String, kotlin/Long) // io.github.mkhytarmkhoian.herald.kmp/ParametersBuilder.put|put(kotlin.String;kotlin.Long){}[0]
+    final fun put(kotlin/String, kotlin/String) // io.github.mkhytarmkhoian.herald.kmp/ParametersBuilder.put|put(kotlin.String;kotlin.String){}[0]
+}
+
+final object io.github.mkhytarmkhoian.herald.kmp/AnalyticsValues { // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValues|null[0]
+    final fun bool(kotlin/Boolean): io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValues.bool|bool(kotlin.Boolean){}[0]
+    final fun double(kotlin/Double): io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValues.double|double(kotlin.Double){}[0]
+    final fun float(kotlin/Float): io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValues.float|float(kotlin.Float){}[0]
+    final fun int(kotlin/Int): io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValues.int|int(kotlin.Int){}[0]
+    final fun long(kotlin/Long): io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValues.long|long(kotlin.Long){}[0]
+    final fun string(kotlin/String): io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue // io.github.mkhytarmkhoian.herald.kmp/AnalyticsValues.string|string(kotlin.String){}[0]
+}
+
+final fun io.github.mkhytarmkhoian.herald.kmp/parameters(kotlin/Function1<io.github.mkhytarmkhoian.herald.kmp/ParametersBuilder, kotlin/Unit>): kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> // io.github.mkhytarmkhoian.herald.kmp/parameters|parameters(kotlin.Function1<io.github.mkhytarmkhoian.herald.kmp.ParametersBuilder,kotlin.Unit>){}[0]

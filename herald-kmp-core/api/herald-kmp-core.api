@@ -1,0 +1,14 @@
+public final class io/github/mkhytarmkhoian/herald/kmp/AnalyticsValues {
+	public static final field INSTANCE Lio/github/mkhytarmkhoian/herald/kmp/AnalyticsValues;
+	public final fun bool (Z)Lio/github/mkhytarmkhoian/herald/AnalyticsValue;
+	public final fun double (D)Lio/github/mkhytarmkhoian/herald/AnalyticsValue;
+	public final fun float (F)Lio/github/mkhytarmkhoian/herald/AnalyticsValue;
+	public final fun int (I)Lio/github/mkhytarmkhoian/herald/AnalyticsValue;
+	public final fun long (J)Lio/github/mkhytarmkhoian/herald/AnalyticsValue;
+	public final fun string (Ljava/lang/String;)Lio/github/mkhytarmkhoian/herald/AnalyticsValue;
+}
+
+public final class io/github/mkhytarmkhoian/herald/kmp/Analytics_jvmKt {
+	public static final fun parameters (Lkotlin/jvm/functions/Function1;)Ljava/util/Map;
+}
+

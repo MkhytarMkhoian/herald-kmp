@@ -1,6 +1,9 @@
 [versions]
 kotlin = "2.4.20"
 agp = "9.4.0"
+maven-publish = "0.37.0"
+dokka = "2.2.0"
+binary-compatibility-validator = "0.18.2"
 coroutines = "1.11.0"
 # The native SDKs that herald-kmp wraps: herald on Android and the JVM, herald-ios on iOS.
 herald-android = "1.2.0"
@@ -17,3 +20,6 @@ kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-t
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+binary-compatibility-validator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "binary-compatibility-validator" }

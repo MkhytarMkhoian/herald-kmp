@@ -1,0 +1,44 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <io.github.mkhytarmkhoian:herald-kmp-adjust>
+final class io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent : io.github.mkhytarmkhoian.herald.kmp/IosVendorEvent { // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent|null[0]
+    final val adImpressionsCount // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.adImpressionsCount|{}adImpressionsCount[0]
+        final fun <get-adImpressionsCount>(): kotlin/Int? // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.adImpressionsCount.<get-adImpressionsCount>|<get-adImpressionsCount>(){}[0]
+    final val adRevenueNetwork // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.adRevenueNetwork|{}adRevenueNetwork[0]
+        final fun <get-adRevenueNetwork>(): kotlin/String? // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.adRevenueNetwork.<get-adRevenueNetwork>|<get-adRevenueNetwork>(){}[0]
+    final val adRevenuePlacement // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.adRevenuePlacement|{}adRevenuePlacement[0]
+        final fun <get-adRevenuePlacement>(): kotlin/String? // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.adRevenuePlacement.<get-adRevenuePlacement>|<get-adRevenuePlacement>(){}[0]
+    final val adRevenueUnit // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.adRevenueUnit|{}adRevenueUnit[0]
+        final fun <get-adRevenueUnit>(): kotlin/String? // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.adRevenueUnit.<get-adRevenueUnit>|<get-adRevenueUnit>(){}[0]
+    final val currency // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.currency|{}currency[0]
+        final fun <get-currency>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.currency.<get-currency>|<get-currency>(){}[0]
+    final val name // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.name|{}name[0]
+        final fun <get-name>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.name.<get-name>|<get-name>(){}[0]
+    final val parameters // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.parameters|{}parameters[0]
+        final fun <get-parameters>(): kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.parameters.<get-parameters>|<get-parameters>(){}[0]
+    final val revenue // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.revenue|{}revenue[0]
+        final fun <get-revenue>(): kotlin/Double // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.revenue.<get-revenue>|<get-revenue>(){}[0]
+    final val source // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.source|{}source[0]
+        final fun <get-source>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent.source.<get-source>|<get-source>(){}[0]
+}
+
+final class io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustRevenueEvent : io.github.mkhytarmkhoian.herald.kmp/IosVendorEvent { // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustRevenueEvent|null[0]
+    final val currency // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustRevenueEvent.currency|{}currency[0]
+        final fun <get-currency>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustRevenueEvent.currency.<get-currency>|<get-currency>(){}[0]
+    final val deduplicationId // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustRevenueEvent.deduplicationId|{}deduplicationId[0]
+        final fun <get-deduplicationId>(): kotlin/String? // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustRevenueEvent.deduplicationId.<get-deduplicationId>|<get-deduplicationId>(){}[0]
+    final val name // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustRevenueEvent.name|{}name[0]
+        final fun <get-name>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustRevenueEvent.name.<get-name>|<get-name>(){}[0]
+    final val parameters // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustRevenueEvent.parameters|{}parameters[0]
+        final fun <get-parameters>(): kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustRevenueEvent.parameters.<get-parameters>|<get-parameters>(){}[0]
+    final val revenue // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustRevenueEvent.revenue|{}revenue[0]
+        final fun <get-revenue>(): kotlin/Double // io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustRevenueEvent.revenue.<get-revenue>|<get-revenue>(){}[0]
+}
+
+final fun io.github.mkhytarmkhoian.herald.kmp.adjust/adjustAdRevenueEvent(kotlin/String, kotlin/String, kotlin/Double, kotlin/String, kotlin/Int? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> = ...): io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustAdRevenueEvent // io.github.mkhytarmkhoian.herald.kmp.adjust/adjustAdRevenueEvent|adjustAdRevenueEvent(kotlin.String;kotlin.String;kotlin.Double;kotlin.String;kotlin.Int?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.collections.Map<kotlin.String,io.github.mkhytarmkhoian.herald.kmp.AnalyticsValue>){}[0]
+final fun io.github.mkhytarmkhoian.herald.kmp.adjust/adjustRevenueEvent(kotlin/String, kotlin/Double, kotlin/String, kotlin/String? = ..., kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> = ...): io.github.mkhytarmkhoian.herald.kmp.adjust/AdjustRevenueEvent // io.github.mkhytarmkhoian.herald.kmp.adjust/adjustRevenueEvent|adjustRevenueEvent(kotlin.String;kotlin.Double;kotlin.String;kotlin.String?;kotlin.collections.Map<kotlin.String,io.github.mkhytarmkhoian.herald.kmp.AnalyticsValue>){}[0]

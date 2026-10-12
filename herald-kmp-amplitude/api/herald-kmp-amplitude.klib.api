@@ -1,0 +1,34 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <io.github.mkhytarmkhoian:herald-kmp-amplitude>
+final class io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent : io.github.mkhytarmkhoian.herald.kmp/IosVendorEvent { // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent|null[0]
+    final val currency // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.currency|{}currency[0]
+        final fun <get-currency>(): kotlin/String? // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.currency.<get-currency>|<get-currency>(){}[0]
+    final val insertId // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.insertId|{}insertId[0]
+        final fun <get-insertId>(): kotlin/String? // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.insertId.<get-insertId>|<get-insertId>(){}[0]
+    final val name // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.name|{}name[0]
+        final fun <get-name>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.name.<get-name>|<get-name>(){}[0]
+    final val parameters // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.parameters|{}parameters[0]
+        final fun <get-parameters>(): kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.parameters.<get-parameters>|<get-parameters>(){}[0]
+    final val price // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.price|{}price[0]
+        final fun <get-price>(): kotlin/Double // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.price.<get-price>|<get-price>(){}[0]
+    final val productId // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.productId|{}productId[0]
+        final fun <get-productId>(): kotlin/String? // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.productId.<get-productId>|<get-productId>(){}[0]
+    final val quantity // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.quantity|{}quantity[0]
+        final fun <get-quantity>(): kotlin/Int // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.quantity.<get-quantity>|<get-quantity>(){}[0]
+    final val receipt // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.receipt|{}receipt[0]
+        final fun <get-receipt>(): kotlin/String? // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.receipt.<get-receipt>|<get-receipt>(){}[0]
+    final val receiptSig // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.receiptSig|{}receiptSig[0]
+        final fun <get-receiptSig>(): kotlin/String? // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.receiptSig.<get-receiptSig>|<get-receiptSig>(){}[0]
+    final val revenue // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.revenue|{}revenue[0]
+        final fun <get-revenue>(): kotlin/Double? // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.revenue.<get-revenue>|<get-revenue>(){}[0]
+    final val revenueType // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.revenueType|{}revenueType[0]
+        final fun <get-revenueType>(): kotlin/String? // io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent.revenueType.<get-revenueType>|<get-revenueType>(){}[0]
+}
+
+final fun io.github.mkhytarmkhoian.herald.kmp.amplitude/amplitudeRevenueEvent(kotlin/String, kotlin/Double, kotlin/Int = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/Double? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> = ...): io.github.mkhytarmkhoian.herald.kmp.amplitude/AmplitudeRevenueEvent // io.github.mkhytarmkhoian.herald.kmp.amplitude/amplitudeRevenueEvent|amplitudeRevenueEvent(kotlin.String;kotlin.Double;kotlin.Int;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.Double?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.collections.Map<kotlin.String,io.github.mkhytarmkhoian.herald.kmp.AnalyticsValue>){}[0]

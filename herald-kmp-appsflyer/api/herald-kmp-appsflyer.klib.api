@@ -1,0 +1,79 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <io.github.mkhytarmkhoian:herald-kmp-appsflyer>
+final enum class io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork : kotlin/Enum<io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork> { // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork|null[0]
+    enum entry ADMOST // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.ADMOST|null[0]
+    enum entry APPLOVIN_MAX // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.APPLOVIN_MAX|null[0]
+    enum entry APPODEAL // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.APPODEAL|null[0]
+    enum entry CHARTBOOST // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.CHARTBOOST|null[0]
+    enum entry CUSTOM_MEDIATION // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.CUSTOM_MEDIATION|null[0]
+    enum entry DIRECT_MONETIZATION_NETWORK // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.DIRECT_MONETIZATION_NETWORK|null[0]
+    enum entry FYBER // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.FYBER|null[0]
+    enum entry GOOGLE_ADMOB // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.GOOGLE_ADMOB|null[0]
+    enum entry IRONSOURCE // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.IRONSOURCE|null[0]
+    enum entry TOPON // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.TOPON|null[0]
+    enum entry TOPON_PTE // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.TOPON_PTE|null[0]
+    enum entry TRADPLUS // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.TRADPLUS|null[0]
+    enum entry UNITY // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.UNITY|null[0]
+    enum entry YANDEX // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.YANDEX|null[0]
+
+    final val entries // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork> // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork> // io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork.values|values#static(){}[0]
+}
+
+final class io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent : io.github.mkhytarmkhoian.herald.kmp/IosVendorEvent { // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent|null[0]
+    final val currency // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent.currency|{}currency[0]
+        final fun <get-currency>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent.currency.<get-currency>|<get-currency>(){}[0]
+    final val mediationNetwork // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent.mediationNetwork|{}mediationNetwork[0]
+        final fun <get-mediationNetwork>(): io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent.mediationNetwork.<get-mediationNetwork>|<get-mediationNetwork>(){}[0]
+    final val monetizationNetwork // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent.monetizationNetwork|{}monetizationNetwork[0]
+        final fun <get-monetizationNetwork>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent.monetizationNetwork.<get-monetizationNetwork>|<get-monetizationNetwork>(){}[0]
+    final val name // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent.name|{}name[0]
+        final fun <get-name>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent.name.<get-name>|<get-name>(){}[0]
+    final val parameters // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent.parameters|{}parameters[0]
+        final fun <get-parameters>(): kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent.parameters.<get-parameters>|<get-parameters>(){}[0]
+    final val revenue // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent.revenue|{}revenue[0]
+        final fun <get-revenue>(): kotlin/Double // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent.revenue.<get-revenue>|<get-revenue>(){}[0]
+}
+
+final class io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent : io.github.mkhytarmkhoian.herald.kmp/IosVendorEvent { // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent|null[0]
+    final val contentId // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.contentId|{}contentId[0]
+        final fun <get-contentId>(): kotlin/String? // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.contentId.<get-contentId>|<get-contentId>(){}[0]
+    final val contentType // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.contentType|{}contentType[0]
+        final fun <get-contentType>(): kotlin/String? // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.contentType.<get-contentType>|<get-contentType>(){}[0]
+    final val currency // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.currency|{}currency[0]
+        final fun <get-currency>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.currency.<get-currency>|<get-currency>(){}[0]
+    final val name // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.name|{}name[0]
+        final fun <get-name>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.name.<get-name>|<get-name>(){}[0]
+    final val orderId // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.orderId|{}orderId[0]
+        final fun <get-orderId>(): kotlin/String? // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.orderId.<get-orderId>|<get-orderId>(){}[0]
+    final val parameters // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.parameters|{}parameters[0]
+        final fun <get-parameters>(): kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.parameters.<get-parameters>|<get-parameters>(){}[0]
+    final val quantity // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.quantity|{}quantity[0]
+        final fun <get-quantity>(): kotlin/Int? // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.quantity.<get-quantity>|<get-quantity>(){}[0]
+    final val revenue // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.revenue|{}revenue[0]
+        final fun <get-revenue>(): kotlin/Double // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent.revenue.<get-revenue>|<get-revenue>(){}[0]
+}
+
+final class io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerSubscribeEvent : io.github.mkhytarmkhoian.herald.kmp/IosVendorEvent { // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerSubscribeEvent|null[0]
+    final val currency // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerSubscribeEvent.currency|{}currency[0]
+        final fun <get-currency>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerSubscribeEvent.currency.<get-currency>|<get-currency>(){}[0]
+    final val name // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerSubscribeEvent.name|{}name[0]
+        final fun <get-name>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerSubscribeEvent.name.<get-name>|<get-name>(){}[0]
+    final val parameters // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerSubscribeEvent.parameters|{}parameters[0]
+        final fun <get-parameters>(): kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerSubscribeEvent.parameters.<get-parameters>|<get-parameters>(){}[0]
+    final val revenue // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerSubscribeEvent.revenue|{}revenue[0]
+        final fun <get-revenue>(): kotlin/Double // io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerSubscribeEvent.revenue.<get-revenue>|<get-revenue>(){}[0]
+}
+
+final fun io.github.mkhytarmkhoian.herald.kmp.appsflyer/appsFlyerAdRevenueEvent(kotlin/String, kotlin/String, io.github.mkhytarmkhoian.herald.kmp.appsflyer/MediationNetwork, kotlin/Double, kotlin/String, kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> = ...): io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerAdRevenueEvent // io.github.mkhytarmkhoian.herald.kmp.appsflyer/appsFlyerAdRevenueEvent|appsFlyerAdRevenueEvent(kotlin.String;kotlin.String;io.github.mkhytarmkhoian.herald.kmp.appsflyer.MediationNetwork;kotlin.Double;kotlin.String;kotlin.collections.Map<kotlin.String,io.github.mkhytarmkhoian.herald.kmp.AnalyticsValue>){}[0]
+final fun io.github.mkhytarmkhoian.herald.kmp.appsflyer/appsFlyerPurchaseEvent(kotlin/String, kotlin/Double, kotlin/String, kotlin/String? = ..., kotlin/String? = ..., kotlin/Int? = ..., kotlin/String? = ..., kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> = ...): io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerPurchaseEvent // io.github.mkhytarmkhoian.herald.kmp.appsflyer/appsFlyerPurchaseEvent|appsFlyerPurchaseEvent(kotlin.String;kotlin.Double;kotlin.String;kotlin.String?;kotlin.String?;kotlin.Int?;kotlin.String?;kotlin.collections.Map<kotlin.String,io.github.mkhytarmkhoian.herald.kmp.AnalyticsValue>){}[0]
+final fun io.github.mkhytarmkhoian.herald.kmp.appsflyer/appsFlyerSubscribeEvent(kotlin/String, kotlin/Double, kotlin/String, kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> = ...): io.github.mkhytarmkhoian.herald.kmp.appsflyer/AppsFlyerSubscribeEvent // io.github.mkhytarmkhoian.herald.kmp.appsflyer/appsFlyerSubscribeEvent|appsFlyerSubscribeEvent(kotlin.String;kotlin.Double;kotlin.String;kotlin.collections.Map<kotlin.String,io.github.mkhytarmkhoian.herald.kmp.AnalyticsValue>){}[0]

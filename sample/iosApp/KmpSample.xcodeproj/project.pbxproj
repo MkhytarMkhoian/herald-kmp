@@ -27,7 +27,6 @@
 		788EC18743879163F55E78F8 /* KmpSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KmpSampleApp.swift; sourceTree = "<group>"; };
 		C8AD59C5819A5B5DCA71DADD /* HeraldKmpBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeraldKmpBridge.swift; sourceTree = "<group>"; };
 		D8F2545D2AB3C2166351E8A1 /* KmpSample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = KmpSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2947D15115DFEEB601C2F42 /* herald-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "herald-ios"; path = "../../../herald-ios"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,17 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				EB95C4D1A4729A80B12BD448 /* App */,
-				E45E37B5B2F5875B26A900D3 /* Packages */,
 				1A30F8C5D9DD8C5ABD3DBC40 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		E45E37B5B2F5875B26A900D3 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				F2947D15115DFEEB601C2F42 /* herald-ios */,
-			);
-			name = Packages;
 			sourceTree = "<group>";
 		};
 		EB95C4D1A4729A80B12BD448 /* App */ = {
@@ -133,10 +123,10 @@
 			mainGroup = C03FB098F221FF4ED27CAEE6;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				6318F093389A65FCF23A2066 /* XCRemoteSwiftPackageReference "herald-ios" */,
 				5A2E5866A42820062F456A28 /* XCRemoteSwiftPackageReference "herald-ios-adjust" */,
 				8B21CB40C84352301FB93CF5 /* XCRemoteSwiftPackageReference "herald-ios-amplitude" */,
 				9E9665DE188117741FE1B7F6 /* XCRemoteSwiftPackageReference "herald-ios-appsflyer" */,
-				38358B672E177525B0630A11 /* XCLocalSwiftPackageReference "../../../herald-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1A30F8C5D9DD8C5ABD3DBC40 /* Products */;
@@ -375,36 +365,37 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		38358B672E177525B0630A11 /* XCLocalSwiftPackageReference "../../../herald-ios" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../../herald-ios";
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
 		5A2E5866A42820062F456A28 /* XCRemoteSwiftPackageReference "herald-ios-adjust" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MkhytarMkhoian/herald-ios-adjust";
 			requirement = {
-				kind = exactVersion;
-				version = 1.0.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+		6318F093389A65FCF23A2066 /* XCRemoteSwiftPackageReference "herald-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MkhytarMkhoian/herald-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
 			};
 		};
 		8B21CB40C84352301FB93CF5 /* XCRemoteSwiftPackageReference "herald-ios-amplitude" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MkhytarMkhoian/herald-ios-amplitude";
 			requirement = {
-				kind = exactVersion;
-				version = 1.0.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
 			};
 		};
 		9E9665DE188117741FE1B7F6 /* XCRemoteSwiftPackageReference "herald-ios-appsflyer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MkhytarMkhoian/herald-ios-appsflyer";
 			requirement = {
-				kind = exactVersion;
-				version = 1.0.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -412,6 +403,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		32DB2631D019FE2AECF0BCD2 /* HeraldInterop */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 6318F093389A65FCF23A2066 /* XCRemoteSwiftPackageReference "herald-ios" */;
 			productName = HeraldInterop;
 		};
 		565F22FF1F9FAB13DC89A9BF /* HeraldAdjust */ = {
@@ -426,6 +418,7 @@
 		};
 		707DBD56B745142384C45B46 /* HeraldCore */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 6318F093389A65FCF23A2066 /* XCRemoteSwiftPackageReference "herald-ios" */;
 			productName = HeraldCore;
 		};
 		B4E594F7499EEA4538BAD3A1 /* HeraldAmplitude */ = {
@@ -435,6 +428,7 @@
 		};
 		C110ECF6EB798AC222EE3587 /* HeraldLog */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 6318F093389A65FCF23A2066 /* XCRemoteSwiftPackageReference "herald-ios" */;
 			productName = HeraldLog;
 		};
 /* End XCSwiftPackageProductDependency section */

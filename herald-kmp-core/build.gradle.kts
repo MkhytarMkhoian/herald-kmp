@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.dokka) // before the publish plugin, which looks for its task
+    alias(libs.plugins.maven.publish)
 }
 
 kotlin {
@@ -7,7 +9,12 @@ kotlin {
 
     // Android apps use the JVM target. There, each type is the Android SDK's own, so an event
     // written in shared code is an Android Herald event.
-    jvm()
+    jvm {
+        // The same as the Android SDK, so any Android app's build can read the classes.
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+        }
+    }
     iosArm64()
     iosSimulatorArm64()
 

@@ -1,5 +1,6 @@
 # Checks every push and pull request: the tests on the JVM, against the real Android Herald, and in
-# the iOS Simulator; and the iOS sample app, built against herald-ios.
+# the iOS Simulator; the public API; the published artifacts; and the iOS sample app, built against
+# the released herald-ios.
 name: CI
 
 on:
@@ -24,8 +25,12 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v5
 
-      - name: Tests on the JVM and in the iOS Simulator
+      - name: Tests on the JVM and in the iOS Simulator, and the API check
         run: SIMULATOR_ID=$(scripts/simulator.sh) ./gradlew check
+
+      - name: Publish to Maven Local
+        # Proves every module still makes what Maven Central requires, without uploading anything.
+        run: ./gradlew publishToMavenLocal
 
       - uses: actions/upload-artifact@v7
         if: failure()
@@ -44,13 +49,6 @@ jobs:
           java-version: 17
 
       - uses: gradle/actions/setup-gradle@v5
-
-      # The sample uses herald-ios from the folder next to this one, as on a developer's machine.
-      # HeraldInterop is on herald-ios's kmp-bridge branch until it's released.
-      - name: Check out herald-ios
-        run: |
-          git clone --depth 1 --branch kmp-bridge https://github.com/MkhytarMkhoian/herald-ios \
-            ../herald-ios
 
       - name: Build the iOS sample app
         run: |

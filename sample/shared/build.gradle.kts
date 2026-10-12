@@ -11,6 +11,9 @@ kotlin {
         compileSdk = 36
         minSdk = 23
         withHostTestBuilder {}
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+        }
     }
     listOf(iosArm64(), iosSimulatorArm64()).forEach { target ->
         target.binaries.framework {
