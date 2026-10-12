@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.targets.native.tasks.KotlinNativeSimulatorTes
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform) apply false
+    alias(libs.plugins.android.kotlin.multiplatform.library) apply false
 }
 
 // iOS tests run in the simulator SIMULATOR_ID names, when set. CI sets it, because its machines

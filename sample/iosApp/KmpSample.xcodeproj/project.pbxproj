@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E28BB4F450F12244CD4E543 /* RevenueTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CE0013EAC4B67224F109BB /* RevenueTranslation.swift */; };
 		429FB824A9B5F2FE19AD8BE3 /* HeraldInterop in Frameworks */ = {isa = PBXBuildFile; productRef = 32DB2631D019FE2AECF0BCD2 /* HeraldInterop */; };
 		7BF10B5B7020D671084EB3E3 /* HeraldKmpBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AD59C5819A5B5DCA71DADD /* HeraldKmpBridge.swift */; };
 		7F8F51B30CBB70C8A84663D4 /* HeraldCore in Frameworks */ = {isa = PBXBuildFile; productRef = 707DBD56B745142384C45B46 /* HeraldCore */; };
+		8F6D9C39DB7C1B5D39DC7862 /* AmplitudeRevenueLogFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD157150071BA2BEEF0586C /* AmplitudeRevenueLogFactory.swift */; };
+		AE433BFB1BD1C52E986F9FFA /* HeraldAmplitude in Frameworks */ = {isa = PBXBuildFile; productRef = B4E594F7499EEA4538BAD3A1 /* HeraldAmplitude */; };
 		B4DDD4E99F772DA655D57CC1 /* HeraldLog in Frameworks */ = {isa = PBXBuildFile; productRef = C110ECF6EB798AC222EE3587 /* HeraldLog */; };
 		E15E5FFB244076460B8359F9 /* NoPersonalDataLogFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5E6A6C03E860F1FF0794E /* NoPersonalDataLogFactory.swift */; };
 		F277E543933A726F9821FB6D /* KmpSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788EC18743879163F55E78F8 /* KmpSampleApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16CE0013EAC4B67224F109BB /* RevenueTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueTranslation.swift; sourceTree = "<group>"; };
 		2DA5E6A6C03E860F1FF0794E /* NoPersonalDataLogFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPersonalDataLogFactory.swift; sourceTree = "<group>"; };
 		788EC18743879163F55E78F8 /* KmpSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KmpSampleApp.swift; sourceTree = "<group>"; };
 		C8AD59C5819A5B5DCA71DADD /* HeraldKmpBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeraldKmpBridge.swift; sourceTree = "<group>"; };
+		CAD157150071BA2BEEF0586C /* AmplitudeRevenueLogFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeRevenueLogFactory.swift; sourceTree = "<group>"; };
 		D8F2545D2AB3C2166351E8A1 /* KmpSample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = KmpSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2947D15115DFEEB601C2F42 /* herald-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "herald-ios"; path = "../../../herald-ios"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -31,6 +36,7 @@
 				7F8F51B30CBB70C8A84663D4 /* HeraldCore in Frameworks */,
 				B4DDD4E99F772DA655D57CC1 /* HeraldLog in Frameworks */,
 				429FB824A9B5F2FE19AD8BE3 /* HeraldInterop in Frameworks */,
+				AE433BFB1BD1C52E986F9FFA /* HeraldAmplitude in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,9 +71,11 @@
 		EB95C4D1A4729A80B12BD448 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CAD157150071BA2BEEF0586C /* AmplitudeRevenueLogFactory.swift */,
 				C8AD59C5819A5B5DCA71DADD /* HeraldKmpBridge.swift */,
 				788EC18743879163F55E78F8 /* KmpSampleApp.swift */,
 				2DA5E6A6C03E860F1FF0794E /* NoPersonalDataLogFactory.swift */,
+				16CE0013EAC4B67224F109BB /* RevenueTranslation.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -92,6 +100,7 @@
 				707DBD56B745142384C45B46 /* HeraldCore */,
 				C110ECF6EB798AC222EE3587 /* HeraldLog */,
 				32DB2631D019FE2AECF0BCD2 /* HeraldInterop */,
+				B4E594F7499EEA4538BAD3A1 /* HeraldAmplitude */,
 			);
 			productName = KmpSample;
 			productReference = D8F2545D2AB3C2166351E8A1 /* KmpSample.app */;
@@ -118,6 +127,7 @@
 			mainGroup = C03FB098F221FF4ED27CAEE6;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				8B21CB40C84352301FB93CF5 /* XCRemoteSwiftPackageReference "herald-ios-amplitude" */,
 				38358B672E177525B0630A11 /* XCLocalSwiftPackageReference "../../../herald-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -156,9 +166,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F6D9C39DB7C1B5D39DC7862 /* AmplitudeRevenueLogFactory.swift in Sources */,
 				7BF10B5B7020D671084EB3E3 /* HeraldKmpBridge.swift in Sources */,
 				F277E543933A726F9821FB6D /* KmpSampleApp.swift in Sources */,
 				E15E5FFB244076460B8359F9 /* NoPersonalDataLogFactory.swift in Sources */,
+				0E28BB4F450F12244CD4E543 /* RevenueTranslation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +374,17 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		8B21CB40C84352301FB93CF5 /* XCRemoteSwiftPackageReference "herald-ios-amplitude" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MkhytarMkhoian/herald-ios-amplitude";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		32DB2631D019FE2AECF0BCD2 /* HeraldInterop */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -370,6 +393,11 @@
 		707DBD56B745142384C45B46 /* HeraldCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HeraldCore;
+		};
+		B4E594F7499EEA4538BAD3A1 /* HeraldAmplitude */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B21CB40C84352301FB93CF5 /* XCRemoteSwiftPackageReference "herald-ios-amplitude" */;
+			productName = HeraldAmplitude;
 		};
 		C110ECF6EB798AC222EE3587 /* HeraldLog */ = {
 			isa = XCSwiftPackageProductDependency;

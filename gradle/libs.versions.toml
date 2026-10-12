@@ -1,5 +1,6 @@
 [versions]
 kotlin = "2.4.20"
+agp = "9.4.0"
 coroutines = "1.11.0"
 # The native SDKs that herald-kmp wraps: herald on Android and the JVM, herald-ios on iOS.
 herald-android = "1.2.0"
@@ -7,8 +8,10 @@ herald-android = "1.2.0"
 [libraries]
 herald-android-core = { module = "io.github.mkhytarmkhoian:herald-core", version.ref = "herald-android" }
 herald-android-log = { module = "io.github.mkhytarmkhoian:herald-log", version.ref = "herald-android" }
+herald-android-amplitude = { module = "io.github.mkhytarmkhoian:herald-amplitude", version.ref = "herald-android" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }

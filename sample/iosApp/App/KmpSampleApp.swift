@@ -8,20 +8,29 @@ import SwiftUI
 struct KmpSampleApp: App {
     private let checkout: CheckoutViewModel
     private let profile: ProfileViewModel
+    private let store: StoreViewModel
 
     init() {
         // herald-ios, set up in Swift as in any iOS app: two logs, one without personal data.
         let all = Self.log(prefix: "[all]", rules: [])
         let filtered = Self.log(prefix: "[no-personal-data]", rules: [NoPersonalDataLogFactory()])
+        let revenue = LogAnalyticsTrackerService(
+            eventTrackerFactory: AmplitudeRevenueLogFactory(logger: { message in print(message) }),
+            propertySetterFactory: GenericLogPropertySetterFactory(logger: { _ in })
+        )
         let herald = Herald(providers: [
             HeraldProvider(name: "all", events: all, properties: all),
             HeraldProvider(name: "no-personal-data", events: filtered, properties: filtered),
+            HeraldProvider(name: "amplitude-revenue", events: revenue),
         ])
 
-        // The shared Kotlin view models get herald-ios through the bridge.
-        let analytics = IosAnalytics(bridge: HeraldKmpBridge(HeraldBridge(herald)))
+        // The shared Kotlin view models get herald-ios through the bridge. Revenue events become
+        // herald-ios's own, so their vendors recognise them.
+        let bridge = HeraldBridge(herald, translate: revenueEvent)
+        let analytics = IosAnalytics(bridge: HeraldKmpBridge(bridge))
         checkout = CheckoutViewModel(analytics: analytics)
         profile = ProfileViewModel(analytics: analytics, properties: analytics)
+        store = StoreViewModel(analytics: analytics)
     }
 
     var body: some Scene {
@@ -31,6 +40,7 @@ struct KmpSampleApp: App {
                     try? await checkout.opened()
                     try? await profile.opened(userId: "u42")
                     try? await profile.themeChanged(dark: true)
+                    try? await store.bought(plan: "pro")
                     print("KMP TRIAL DONE")
                 }
         }
