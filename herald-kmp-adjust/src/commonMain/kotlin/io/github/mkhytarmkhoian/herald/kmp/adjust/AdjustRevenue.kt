@@ -3,10 +3,11 @@ package io.github.mkhytarmkhoian.herald.kmp.adjust
 import io.github.mkhytarmkhoian.herald.kmp.AnalyticsValue
 import io.github.mkhytarmkhoian.herald.kmp.Event
 
+// On Android, these are herald-adjust's own classes. On iOS, the app's Swift turns them
+// into herald-ios-adjust's (see RevenueTranslation.swift).
+
 /**
- * A purchase, sent to Adjust as revenue with its event token. On Android it is herald-adjust's own
- * class; on iOS the app's Swift turns it into herald-ios-adjust's. Shared code makes one with
- * [adjustRevenueEvent].
+ * A purchase, sent to Adjust as revenue with its event token. Make one with [adjustRevenueEvent].
  */
 public expect class AdjustRevenueEvent : Event {
     override val name: String
@@ -17,9 +18,7 @@ public expect class AdjustRevenueEvent : Event {
 }
 
 /**
- * Ad revenue, sent to Adjust from an ad network. On Android it is herald-adjust's own class; on iOS
- * the app's Swift turns it into herald-ios-adjust's. Shared code makes one with
- * [adjustAdRevenueEvent].
+ * Ad revenue, sent to Adjust from an ad network. Make one with [adjustAdRevenueEvent].
  */
 public expect class AdjustAdRevenueEvent : Event {
     override val name: String
@@ -35,7 +34,7 @@ public expect class AdjustAdRevenueEvent : Event {
 
 /**
  * Makes an [AdjustRevenueEvent], with the same parameters and defaults as Android's constructor.
- * Shared code can't call that constructor: Kotlin drops its default values on the way from Android.
+ * Shared code can't use the constructor itself: Kotlin drops its defaults.
  */
 public expect fun adjustRevenueEvent(
     name: String,
@@ -47,7 +46,7 @@ public expect fun adjustRevenueEvent(
 
 /**
  * Makes an [AdjustAdRevenueEvent], with the same parameters and defaults as Android's constructor.
- * Shared code can't call that constructor: Kotlin drops its default values on the way from Android.
+ * Shared code can't use the constructor itself: Kotlin drops its defaults.
  */
 public expect fun adjustAdRevenueEvent(
     name: String,

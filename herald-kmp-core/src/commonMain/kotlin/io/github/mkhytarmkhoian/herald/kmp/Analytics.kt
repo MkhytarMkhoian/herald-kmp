@@ -2,8 +2,8 @@ package io.github.mkhytarmkhoian.herald.kmp
 
 import kotlin.jvm.JvmInline
 
-// The types shared code uses. On the JVM, and so on Android, each one is the Android SDK's own
-// type. On iOS, each one has a Kotlin twin, and IosAnalytics passes its calls to herald-ios.
+// The types shared code uses. On Android, each one is the Android SDK's own type. On iOS, each one
+// is a Kotlin copy, and IosAnalytics sends the calls to herald-ios.
 
 /** Something that happened: a name and its parameters. */
 public expect interface Event {
@@ -109,8 +109,8 @@ public expect class ParametersBuilder {
  * override val value = AnalyticsValues.string(if (dark) "dark" else "light")
  * ```
  *
- * Shared code can't write `AnalyticsValue.String("dark")`: on Android, [AnalyticsValue] is the
- * Android SDK's type, and Kotlin doesn't reach nested classes through that link.
+ * Shared code can't write `AnalyticsValue.String("dark")`: Kotlin doesn't allow it when the type
+ * comes from the Android SDK.
  */
 public expect object AnalyticsValues {
     public fun string(value: String): AnalyticsValue

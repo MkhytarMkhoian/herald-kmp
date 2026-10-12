@@ -4,7 +4,7 @@ plugins {
 }
 
 // An app's shared module: its events and view models, written once. The iOS framework exports
-// herald-kmp, so Swift can create IosAnalytics and read Kotlin revenue events.
+// herald-kmp, so Swift can use IosAnalytics and the revenue events.
 kotlin {
     android {
         namespace = "io.github.mkhytarmkhoian.herald.sample"

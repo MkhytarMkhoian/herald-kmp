@@ -7,8 +7,8 @@ import io.github.mkhytarmkhoian.herald.kmp.IosVendorEvent
 import kotlin.experimental.ExperimentalObjCName
 import kotlin.native.ObjCName
 
-// herald-ios-amplitude has classes with these names too, so Swift sees these with
-// "Kotlin" in front. IosVendorEvent tells the bridge the app must translate them.
+// herald-ios-amplitude has the same names, so Swift sees these with "Kotlin" in front.
+// IosVendorEvent tells the bridge the app must translate them.
 
 @ObjCName(swiftName = "KotlinAmplitudeRevenueEvent")
 public actual class AmplitudeRevenueEvent internal constructor(

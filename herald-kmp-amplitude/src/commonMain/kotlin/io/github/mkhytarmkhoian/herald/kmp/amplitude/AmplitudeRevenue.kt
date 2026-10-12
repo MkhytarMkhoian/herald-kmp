@@ -3,10 +3,11 @@ package io.github.mkhytarmkhoian.herald.kmp.amplitude
 import io.github.mkhytarmkhoian.herald.kmp.AnalyticsValue
 import io.github.mkhytarmkhoian.herald.kmp.Event
 
+// On Android, these are herald-amplitude's own classes. On iOS, the app's Swift turns them
+// into herald-ios-amplitude's (see RevenueTranslation.swift).
+
 /**
- * A purchase, sent to Amplitude as revenue. On Android it is herald-amplitude's own class; on iOS
- * the app's Swift turns it into herald-ios-amplitude's. Shared code makes one with
- * [amplitudeRevenueEvent].
+ * A purchase, sent to Amplitude as revenue. Make one with [amplitudeRevenueEvent].
  */
 public expect class AmplitudeRevenueEvent : Event {
     override val name: String
@@ -24,7 +25,7 @@ public expect class AmplitudeRevenueEvent : Event {
 
 /**
  * Makes an [AmplitudeRevenueEvent], with the same parameters and defaults as Android's constructor.
- * Shared code can't call that constructor: Kotlin drops its default values on the way from Android.
+ * Shared code can't use the constructor itself: Kotlin drops its defaults.
  */
 public expect fun amplitudeRevenueEvent(
     name: String,

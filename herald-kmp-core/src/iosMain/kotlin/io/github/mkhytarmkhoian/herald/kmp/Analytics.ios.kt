@@ -5,11 +5,9 @@ package io.github.mkhytarmkhoian.herald.kmp
 import kotlin.experimental.ExperimentalObjCName
 import kotlin.native.ObjCName
 
-// On iOS, each shared type is a Kotlin twin of the Android SDK's, so shared code reads the same on
-// both. IosAnalytics passes the calls on to herald-ios.
-//
-// herald-ios has types with the same names, so Swift sees these with "Kotlin" in front:
-// KotlinEvent, KotlinProperty and so on. Kotlin code uses the plain names.
+// On iOS, each shared type is a Kotlin copy of the Android SDK's, so shared code reads the same on
+// both. herald-ios has the same names, so Swift sees these with "Kotlin" in front: KotlinEvent,
+// KotlinProperty and so on.
 
 @ObjCName(swiftName = "KotlinEvent")
 public actual interface Event {

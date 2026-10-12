@@ -1,12 +1,13 @@
 package io.github.mkhytarmkhoian.herald.kmp
 
 /**
- * The analytics shared code uses on iOS. It passes every call to [bridge], which the iOS app
- * implements in Swift on top of herald-ios`s `HeraldBridge`:
+ * The analytics shared code uses on iOS. It passes every call to [bridge], which sends it to
+ * herald-ios:
  *
  * ```swift
- * let herald = Herald(providers: [firebaseProvider()])  // herald-ios, set up as usual
- * let analytics = IosAnalytics(bridge: HeraldKmpBridge(HeraldBridge(herald)))
+ * let herald = Herald(providers: [amplitudeProvider()])  // herald-ios, set up as usual
+ * let bridge = HeraldBridge(herald, translate: revenueEvent, errorReporter: report)
+ * let analytics = IosAnalytics(bridge: HeraldKmpBridge(bridge))
  * ```
  */
 public class IosAnalytics(private val bridge: IosHeraldBridge) :
@@ -42,14 +43,13 @@ public class IosAnalytics(private val bridge: IosHeraldBridge) :
 }
 
 /**
- * What the iOS app implements in Swift, usually by calling herald-ios`s `HeraldBridge`. Plain,
- * synchronous functions, so the Swift side stays simple.
+ * Implemented in Swift by the iOS app (herald-kmp's `HeraldKmpBridge.swift`, ready to copy), on top
+ * of herald-ios's `HeraldBridge`. Plain functions, so the Swift side stays simple.
  */
 public interface IosHeraldBridge {
     /**
-     * [event] is the original object, so Swift can check your shared labels on it:
-     * `event.kotlinEvent is PersonalDataEvent`. [needsTranslation] marks a vendor event, such as
-     * revenue, that the app's Swift must turn into its herald-ios type.
+     * [event] is the original object, so Swift can check your labels on it. [needsTranslation]
+     * marks an [IosVendorEvent].
      */
     public fun track(
         name: String,
@@ -73,14 +73,13 @@ public interface IosHeraldBridge {
 }
 
 /**
- * A vendor event, such as revenue, that herald-ios knows as its own type. The iOS app's Swift
- * turns it into that type; when it doesn't, the bridge reports it instead of letting the vendor
- * get a plain event without a word. herald-kmp's vendor modules mark their revenue events with it.
+ * A vendor event, such as revenue, that the iOS app must turn into its herald-ios type. If the app
+ * doesn't, `HeraldBridge` reports it, so revenue isn't lost without a word.
  */
 public interface IosVendorEvent : Event
 
 /**
- * A parameter value on its way to Swift. herald-ios knows four types, so a Long arrives as an Int
+ * A parameter value on its way to Swift. herald-ios has four types, so a Long arrives as an Int
  * (64-bit in Swift) and a Float as a Double.
  */
 public class IosBridgeValue internal constructor(

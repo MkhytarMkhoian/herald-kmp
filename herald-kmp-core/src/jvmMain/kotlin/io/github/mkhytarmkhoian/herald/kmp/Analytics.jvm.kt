@@ -1,7 +1,7 @@
 package io.github.mkhytarmkhoian.herald.kmp
 
-// On the JVM, and so on Android, each shared type is the Android SDK's own: an event written in
-// shared code goes to the Android Herald unchanged, and its vendors' factories see their own types.
+// On the JVM, and so on Android, each shared type is the Android SDK's own, so events from shared
+// code reach the Android Herald unchanged.
 
 public actual typealias Event = io.github.mkhytarmkhoian.herald.Event
 

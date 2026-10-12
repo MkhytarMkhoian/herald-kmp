@@ -3,10 +3,11 @@ package io.github.mkhytarmkhoian.herald.kmp.appsflyer
 import io.github.mkhytarmkhoian.herald.kmp.AnalyticsValue
 import io.github.mkhytarmkhoian.herald.kmp.Event
 
+// On Android, these are herald-appsflyer's own classes. On iOS, the app's Swift turns them
+// into herald-ios-appsflyer's (see RevenueTranslation.swift).
+
 /**
- * A purchase, sent to AppsFlyer as af_purchase revenue. On Android it is herald-appsflyer's own
- * class; on iOS the app's Swift turns it into herald-ios-appsflyer's. Shared code makes one with
- * [appsFlyerPurchaseEvent].
+ * A purchase, sent to AppsFlyer as af_purchase revenue. Make one with [appsFlyerPurchaseEvent].
  */
 public expect class AppsFlyerPurchaseEvent : Event {
     override val name: String
@@ -20,9 +21,8 @@ public expect class AppsFlyerPurchaseEvent : Event {
 }
 
 /**
- * A subscription, sent to AppsFlyer as af_subscribe revenue. On Android it is herald-appsflyer's
- * own class; on iOS the app's Swift turns it into herald-ios-appsflyer's. Shared code makes one
- * with [appsFlyerSubscribeEvent].
+ * A subscription, sent to AppsFlyer as af_subscribe revenue. Make one with
+ * [appsFlyerSubscribeEvent].
  */
 public expect class AppsFlyerSubscribeEvent : Event {
     override val name: String
@@ -32,8 +32,7 @@ public expect class AppsFlyerSubscribeEvent : Event {
 }
 
 /**
- * Ad revenue, sent to AppsFlyer through its ad revenue API. On Android it is herald-appsflyer's own
- * class; on iOS the app's Swift turns it into herald-ios-appsflyer's. Shared code makes one with
+ * Ad revenue, sent to AppsFlyer through its ad revenue API. Make one with
  * [appsFlyerAdRevenueEvent].
  */
 public expect class AppsFlyerAdRevenueEvent : Event {
@@ -46,7 +45,7 @@ public expect class AppsFlyerAdRevenueEvent : Event {
 }
 
 /**
- * The ad mediation network: the same list as in AppsFlyer's Android and iOS SDKs. On Android it is
+ * The ad mediation network. AppsFlyer's Android and iOS SDKs list the same ones; on Android this is
  * the SDK's own enum.
  */
 public expect enum class MediationNetwork {
@@ -68,8 +67,7 @@ public expect enum class MediationNetwork {
 
 /**
  * Makes an [AppsFlyerPurchaseEvent], with the same parameters and defaults as Android's
- * constructor. Shared code can't call that constructor: Kotlin drops its default values on the way
- * from Android.
+ * constructor. Shared code can't use the constructor itself: Kotlin drops its defaults.
  */
 public expect fun appsFlyerPurchaseEvent(
     name: String,
@@ -84,8 +82,7 @@ public expect fun appsFlyerPurchaseEvent(
 
 /**
  * Makes an [AppsFlyerSubscribeEvent], with the same parameters and defaults as Android's
- * constructor. Shared code can't call that constructor: Kotlin drops its default values on the way
- * from Android.
+ * constructor. Shared code can't use the constructor itself: Kotlin drops its defaults.
  */
 public expect fun appsFlyerSubscribeEvent(
     name: String,
@@ -96,8 +93,7 @@ public expect fun appsFlyerSubscribeEvent(
 
 /**
  * Makes an [AppsFlyerAdRevenueEvent], with the same parameters and defaults as Android's
- * constructor. Shared code can't call that constructor: Kotlin drops its default values on the way
- * from Android.
+ * constructor. Shared code can't use the constructor itself: Kotlin drops its defaults.
  */
 public expect fun appsFlyerAdRevenueEvent(
     name: String,

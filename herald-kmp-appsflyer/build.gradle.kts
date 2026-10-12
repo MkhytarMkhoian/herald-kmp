@@ -6,7 +6,7 @@ plugins {
 kotlin {
     explicitApi()
 
-    // On Android, the revenue events are herald-appsflyer's own, so its factories recognise them.
+    // On Android, the revenue events are herald-appsflyer's own classes.
     android {
         namespace = "io.github.mkhytarmkhoian.herald.kmp.appsflyer"
         compileSdk = 36
