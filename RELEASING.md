@@ -1,7 +1,8 @@
 # Releasing
 
 A release is a `vX.Y.Z` tag. Pushing it runs the **Publish** workflow, which uploads every module
-to Maven Central.
+to Maven Central, then redeploys the [website](https://mkhytarmkhoian.github.io/herald-docs/) so
+its Kotlin Multiplatform page shows the new release.
 
 herald-kmp wraps the Android and iOS SDKs, so release them first when a release needs something new
 from them.
@@ -38,6 +39,7 @@ A tag must never move once pushed. When a release is wrong, fix it forward with 
 
 ## One-time setup
 
-Four repository secrets, the same as in the Android repo: `MAVEN_CENTRAL_USERNAME`,
+Five repository secrets, the same as in the Android repo: `MAVEN_CENTRAL_USERNAME`,
 `MAVEN_CENTRAL_PASSWORD` (a Central Portal user token), `SIGNING_KEY` (an ASCII-armored GPG private
-key) and `SIGNING_KEY_PASSWORD`.
+key), `SIGNING_KEY_PASSWORD`, and `DOCS_DISPATCH_TOKEN` (a token that starts herald-docs'
+workflows).

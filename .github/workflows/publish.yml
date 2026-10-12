@@ -1,12 +1,14 @@
 # Publishes every module to Maven Central when a `v*` tag is pushed. The version is the tag without
-# its `v`, overriding the -SNAPSHOT in gradle.properties.
+# its `v`, overriding the -SNAPSHOT in gradle.properties. Then it asks herald-docs to redeploy the
+# website with this release.
 #
 # It runs on a Mac, because the iOS parts can only be built there.
 #
-# Needs four repository secrets, the same as in the Android repo:
+# Needs five repository secrets, the same as in the Android repo:
 #   MAVEN_CENTRAL_USERNAME / MAVEN_CENTRAL_PASSWORD — a Central Portal user token
 #   SIGNING_KEY                                     — ASCII-armored GPG private key
 #   SIGNING_KEY_PASSWORD                            — its passphrase
+#   DOCS_DISPATCH_TOKEN                             — a token that starts herald-docs' workflows
 name: Publish
 
 on:
@@ -33,3 +35,8 @@ jobs:
           ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.SIGNING_KEY }}
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
         run: ./gradlew publishAndReleaseToMavenCentral -Pversion=${GITHUB_REF_NAME#v}
+
+      - name: Redeploy the website
+        env:
+          GH_TOKEN: ${{ secrets.DOCS_DISPATCH_TOKEN }}
+        run: gh api repos/MkhytarMkhoian/herald-docs/dispatches -f event_type=sdk-release
