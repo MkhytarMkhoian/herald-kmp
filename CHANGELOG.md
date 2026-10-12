@@ -2,7 +2,7 @@
 
 ## Version 1.0.0
 
-_Not released yet_
+_2026-10-12_
 
 The first release: Herald's API in shared Kotlin, over the Android SDK 1.2.0 and the iOS SDK 1.1.0.
 
