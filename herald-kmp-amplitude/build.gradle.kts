@@ -6,7 +6,7 @@ plugins {
 kotlin {
     explicitApi()
 
-    // On Android, the revenue event is herald-amplitude's own, so its factories recognise it.
+    // On Android, the revenue events are herald-amplitude's own, so its factories recognise them.
     android {
         namespace = "io.github.mkhytarmkhoian.herald.kmp.amplitude"
         compileSdk = 36

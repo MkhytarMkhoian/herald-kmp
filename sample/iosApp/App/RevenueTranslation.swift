@@ -1,4 +1,7 @@
+import AppsFlyerLib
+import HeraldAdjust
 import HeraldAmplitude
+import HeraldAppsFlyer
 import HeraldCore
 import Shared
 
@@ -15,5 +18,45 @@ func revenueEvent(from kotlinEvent: AnyObject, parameters: [String: AnalyticsVal
             revenue: event.revenue?.doubleValue, receipt: event.receipt,
             receiptSig: event.receiptSig, insertId: event.insertId, parameters: parameters)
     }
+    if let event = kotlinEvent as? KotlinAdjustRevenueEvent {
+        return AdjustRevenueEvent(
+            name: event.name, revenue: event.revenue, currency: event.currency,
+            deduplicationId: event.deduplicationId, parameters: parameters)
+    }
+    if let event = kotlinEvent as? KotlinAdjustAdRevenueEvent {
+        return AdjustAdRevenueEvent(
+            name: event.name, source: event.source, revenue: event.revenue,
+            currency: event.currency, adImpressionsCount: event.adImpressionsCount?.intValue,
+            adRevenueNetwork: event.adRevenueNetwork, adRevenueUnit: event.adRevenueUnit,
+            adRevenuePlacement: event.adRevenuePlacement, parameters: parameters)
+    }
+    if let event = kotlinEvent as? KotlinAppsFlyerPurchaseEvent {
+        return AppsFlyerPurchaseEvent(
+            name: event.name, revenue: event.revenue, currency: event.currency,
+            contentId: event.contentId, contentType: event.contentType,
+            quantity: event.quantity?.intValue, orderId: event.orderId, parameters: parameters)
+    }
+    if let event = kotlinEvent as? KotlinAppsFlyerSubscribeEvent {
+        return AppsFlyerSubscribeEvent(
+            name: event.name, revenue: event.revenue, currency: event.currency,
+            parameters: parameters)
+    }
+    if let event = kotlinEvent as? KotlinAppsFlyerAdRevenueEvent,
+        let network = mediationNetworks[event.mediationNetwork.name]
+    {
+        return AppsFlyerAdRevenueEvent(
+            name: event.name, monetizationNetwork: event.monetizationNetwork,
+            mediationNetwork: network, revenue: event.revenue, currency: event.currency,
+            parameters: parameters)
+    }
     return nil
 }
+
+/// AppsFlyer's mediation networks, by their name in Kotlin. The two SDKs list the same ones.
+private let mediationNetworks: [String: MediationNetworkType] = [
+    "IRONSOURCE": .ironSource, "APPLOVIN_MAX": .applovinMax, "GOOGLE_ADMOB": .googleAdMob,
+    "FYBER": .fyber, "APPODEAL": .appodeal, "ADMOST": .admost, "TOPON": .topon,
+    "TRADPLUS": .tradplus, "YANDEX": .yandex, "CHARTBOOST": .chartBoost, "UNITY": .unity,
+    "TOPON_PTE": .toponPte, "CUSTOM_MEDIATION": .custom,
+    "DIRECT_MONETIZATION_NETWORK": .directMonetization,
+]

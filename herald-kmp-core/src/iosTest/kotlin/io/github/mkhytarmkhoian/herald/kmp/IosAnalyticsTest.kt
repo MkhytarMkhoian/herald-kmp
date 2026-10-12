@@ -81,7 +81,10 @@ class IosAnalyticsTest {
         analytics.set(AppTheme())
         analytics.set(Plan())
 
-        assertEquals(listOf("app_theme STRING dark false", "plan STRING pro true"), bridge.properties)
+        assertEquals(
+            listOf("app_theme STRING dark false", "plan STRING pro true"),
+            bridge.properties,
+        )
     }
 
     @Test
@@ -92,7 +95,10 @@ class IosAnalyticsTest {
         analytics.flush()
         analytics.reset()
 
-        assertEquals(listOf("start", "enabled true", "identify user-42", "flush", "reset"), bridge.calls)
+        assertEquals(
+            listOf("start", "enabled true", "identify user-42", "flush", "reset"),
+            bridge.calls,
+        )
     }
 }
 

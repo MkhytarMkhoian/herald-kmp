@@ -9,6 +9,8 @@ herald-android = "1.2.0"
 herald-android-core = { module = "io.github.mkhytarmkhoian:herald-core", version.ref = "herald-android" }
 herald-android-log = { module = "io.github.mkhytarmkhoian:herald-log", version.ref = "herald-android" }
 herald-android-amplitude = { module = "io.github.mkhytarmkhoian:herald-amplitude", version.ref = "herald-android" }
+herald-android-adjust = { module = "io.github.mkhytarmkhoian:herald-adjust", version.ref = "herald-android" }
+herald-android-appsflyer = { module = "io.github.mkhytarmkhoian:herald-appsflyer", version.ref = "herald-android" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 

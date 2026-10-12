@@ -17,6 +17,8 @@ kotlin {
             baseName = "Shared"
             export(project(":herald-kmp-core"))
             export(project(":herald-kmp-amplitude"))
+            export(project(":herald-kmp-adjust"))
+            export(project(":herald-kmp-appsflyer"))
         }
     }
 
@@ -24,6 +26,8 @@ kotlin {
         commonMain.dependencies {
             api(project(":herald-kmp-core"))
             api(project(":herald-kmp-amplitude"))
+            api(project(":herald-kmp-adjust"))
+            api(project(":herald-kmp-appsflyer"))
         }
         getByName("androidHostTest").dependencies {
             implementation(kotlin("test"))

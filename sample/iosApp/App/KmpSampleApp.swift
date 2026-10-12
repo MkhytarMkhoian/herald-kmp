@@ -15,13 +15,13 @@ struct KmpSampleApp: App {
         let all = Self.log(prefix: "[all]", rules: [])
         let filtered = Self.log(prefix: "[no-personal-data]", rules: [NoPersonalDataLogFactory()])
         let revenue = LogAnalyticsTrackerService(
-            eventTrackerFactory: AmplitudeRevenueLogFactory(logger: { message in print(message) }),
+            eventTrackerFactory: RevenueLogFactory(logger: { message in print(message) }),
             propertySetterFactory: GenericLogPropertySetterFactory(logger: { _ in })
         )
         let herald = Herald(providers: [
             HeraldProvider(name: "all", events: all, properties: all),
             HeraldProvider(name: "no-personal-data", events: filtered, properties: filtered),
-            HeraldProvider(name: "amplitude-revenue", events: revenue),
+            HeraldProvider(name: "revenue", events: revenue),
         ])
 
         // The shared Kotlin view models get herald-ios through the bridge. Revenue events become
@@ -41,6 +41,7 @@ struct KmpSampleApp: App {
                     try? await profile.opened(userId: "u42")
                     try? await profile.themeChanged(dark: true)
                     try? await store.bought(plan: "pro")
+                    try? await store.adShown()
                     print("KMP TRIAL DONE")
                 }
         }

@@ -7,8 +7,9 @@ import io.github.mkhytarmkhoian.herald.kmp.Event
 import kotlin.experimental.ExperimentalObjCName
 import kotlin.native.ObjCName
 
-// herald-ios-amplitude has an AmplitudeRevenueEvent too, so Swift sees this one as
-// KotlinAmplitudeRevenueEvent.
+// herald-ios-amplitude has classes with these names too, so Swift sees these with
+// "Kotlin" in front.
+
 @ObjCName(swiftName = "KotlinAmplitudeRevenueEvent")
 public actual class AmplitudeRevenueEvent internal constructor(
     actual override val name: String,
@@ -24,30 +25,28 @@ public actual class AmplitudeRevenueEvent internal constructor(
     actual override val parameters: Map<String, AnalyticsValue>,
 ) : Event
 
-public actual object AmplitudeRevenue {
-    public actual fun event(
-        name: String,
-        price: Double,
-        quantity: Int,
-        productId: String?,
-        revenueType: String?,
-        currency: String?,
-        revenue: Double?,
-        receipt: String?,
-        receiptSig: String?,
-        insertId: String?,
-        parameters: Map<String, AnalyticsValue>,
-    ): AmplitudeRevenueEvent = AmplitudeRevenueEvent(
-        name = name,
-        price = price,
-        quantity = quantity,
-        productId = productId,
-        revenueType = revenueType,
-        currency = currency,
-        revenue = revenue,
-        receipt = receipt,
-        receiptSig = receiptSig,
-        insertId = insertId,
-        parameters = parameters,
-    )
-}
+public actual fun amplitudeRevenueEvent(
+    name: String,
+    price: Double,
+    quantity: Int,
+    productId: String?,
+    revenueType: String?,
+    currency: String?,
+    revenue: Double?,
+    receipt: String?,
+    receiptSig: String?,
+    insertId: String?,
+    parameters: Map<String, AnalyticsValue>,
+): AmplitudeRevenueEvent = AmplitudeRevenueEvent(
+    name = name,
+    price = price,
+    quantity = quantity,
+    productId = productId,
+    revenueType = revenueType,
+    currency = currency,
+    revenue = revenue,
+    receipt = receipt,
+    receiptSig = receiptSig,
+    insertId = insertId,
+    parameters = parameters,
+)

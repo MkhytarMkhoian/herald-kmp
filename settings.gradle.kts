@@ -18,4 +18,6 @@ rootProject.name = "herald-kmp"
 
 include(":herald-kmp-core")
 include(":herald-kmp-amplitude")
+include(":herald-kmp-adjust")
+include(":herald-kmp-appsflyer")
 include(":sample:shared")
