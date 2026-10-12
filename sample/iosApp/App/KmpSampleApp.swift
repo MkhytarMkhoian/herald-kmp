@@ -26,7 +26,8 @@ struct KmpSampleApp: App {
 
         // The shared Kotlin view models get herald-ios through the bridge. Revenue events become
         // herald-ios's own, so their vendors recognise them.
-        let bridge = HeraldBridge(herald, translate: revenueEvent)
+        let report: AnalyticsErrorReporter = { failure in print("analytics: \(failure)") }
+        let bridge = HeraldBridge(herald, translate: revenueEvent, errorReporter: report)
         let analytics = IosAnalytics(bridge: HeraldKmpBridge(bridge))
         checkout = CheckoutViewModel(analytics: analytics)
         profile = ProfileViewModel(analytics: analytics, properties: analytics)

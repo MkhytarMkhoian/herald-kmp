@@ -3,12 +3,12 @@
 package io.github.mkhytarmkhoian.herald.kmp.amplitude
 
 import io.github.mkhytarmkhoian.herald.kmp.AnalyticsValue
-import io.github.mkhytarmkhoian.herald.kmp.Event
+import io.github.mkhytarmkhoian.herald.kmp.IosVendorEvent
 import kotlin.experimental.ExperimentalObjCName
 import kotlin.native.ObjCName
 
 // herald-ios-amplitude has classes with these names too, so Swift sees these with
-// "Kotlin" in front.
+// "Kotlin" in front. IosVendorEvent tells the bridge the app must translate them.
 
 @ObjCName(swiftName = "KotlinAmplitudeRevenueEvent")
 public actual class AmplitudeRevenueEvent internal constructor(
@@ -23,7 +23,7 @@ public actual class AmplitudeRevenueEvent internal constructor(
     public actual val receiptSig: String?,
     public actual val insertId: String?,
     actual override val parameters: Map<String, AnalyticsValue>,
-) : Event
+) : IosVendorEvent
 
 public actual fun amplitudeRevenueEvent(
     name: String,

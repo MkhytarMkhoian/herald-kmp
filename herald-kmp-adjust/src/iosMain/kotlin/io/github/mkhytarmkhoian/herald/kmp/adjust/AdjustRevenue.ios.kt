@@ -3,12 +3,12 @@
 package io.github.mkhytarmkhoian.herald.kmp.adjust
 
 import io.github.mkhytarmkhoian.herald.kmp.AnalyticsValue
-import io.github.mkhytarmkhoian.herald.kmp.Event
+import io.github.mkhytarmkhoian.herald.kmp.IosVendorEvent
 import kotlin.experimental.ExperimentalObjCName
 import kotlin.native.ObjCName
 
 // herald-ios-adjust has classes with these names too, so Swift sees these with
-// "Kotlin" in front.
+// "Kotlin" in front. IosVendorEvent tells the bridge the app must translate them.
 
 @ObjCName(swiftName = "KotlinAdjustRevenueEvent")
 public actual class AdjustRevenueEvent internal constructor(
@@ -17,7 +17,7 @@ public actual class AdjustRevenueEvent internal constructor(
     public actual val currency: String,
     public actual val deduplicationId: String?,
     actual override val parameters: Map<String, AnalyticsValue>,
-) : Event
+) : IosVendorEvent
 
 @ObjCName(swiftName = "KotlinAdjustAdRevenueEvent")
 public actual class AdjustAdRevenueEvent internal constructor(
@@ -30,7 +30,7 @@ public actual class AdjustAdRevenueEvent internal constructor(
     public actual val adRevenueUnit: String?,
     public actual val adRevenuePlacement: String?,
     actual override val parameters: Map<String, AnalyticsValue>,
-) : Event
+) : IosVendorEvent
 
 public actual fun adjustRevenueEvent(
     name: String,

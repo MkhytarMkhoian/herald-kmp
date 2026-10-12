@@ -21,6 +21,7 @@ public class IosAnalytics(private val bridge: IosHeraldBridge) :
             name = event.name,
             parameters = event.parameters.mapValues { (_, value) -> value.toBridge() },
             isScreenView = event is ScreenViewEvent,
+            needsTranslation = event is IosVendorEvent,
             event = event,
         )
     }
@@ -47,12 +48,14 @@ public class IosAnalytics(private val bridge: IosHeraldBridge) :
 public interface IosHeraldBridge {
     /**
      * [event] is the original object, so Swift can check your shared labels on it:
-     * `event.kotlinEvent is PersonalDataEvent`.
+     * `event.kotlinEvent is PersonalDataEvent`. [needsTranslation] marks a vendor event, such as
+     * revenue, that the app's Swift must turn into its herald-ios type.
      */
     public fun track(
         name: String,
         parameters: Map<String, IosBridgeValue>,
         isScreenView: Boolean,
+        needsTranslation: Boolean,
         event: Event,
     )
 
@@ -68,6 +71,13 @@ public interface IosHeraldBridge {
 
     public fun setEnabled(enabled: Boolean)
 }
+
+/**
+ * A vendor event, such as revenue, that herald-ios knows as its own type. The iOS app's Swift
+ * turns it into that type; when it doesn't, the bridge reports it instead of letting the vendor
+ * get a plain event without a word. herald-kmp's vendor modules mark their revenue events with it.
+ */
+public interface IosVendorEvent : Event
 
 /**
  * A parameter value on its way to Swift. herald-ios knows four types, so a Long arrives as an Int

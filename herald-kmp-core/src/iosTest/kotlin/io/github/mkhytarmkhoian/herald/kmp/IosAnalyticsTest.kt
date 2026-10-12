@@ -27,6 +27,10 @@ private class CheckoutStarted : Event {
     }
 }
 
+private class Purchase : IosVendorEvent {
+    override val name = "purchase"
+}
+
 private class AppTheme : Property {
     override val name = "app_theme"
     override val value = AnalyticsValues.string("dark")
@@ -65,6 +69,14 @@ class IosAnalyticsTest {
         analytics.track(CheckoutStarted())
 
         assertEquals(listOf(true, false), bridge.tracked.map { call -> call.isScreenView })
+    }
+
+    @Test
+    fun aVendorEventAsksForTranslation() = runTest {
+        analytics.track(Purchase())
+        analytics.track(CheckoutStarted())
+
+        assertEquals(listOf(true, false), bridge.tracked.map { call -> call.needsTranslation })
     }
 
     @Test
@@ -114,6 +126,7 @@ private class RecordingBridge : IosHeraldBridge {
         val name: String,
         val parameters: Map<String, IosBridgeValue>,
         val isScreenView: Boolean,
+        val needsTranslation: Boolean,
         val event: Event,
     )
 
@@ -125,9 +138,10 @@ private class RecordingBridge : IosHeraldBridge {
         name: String,
         parameters: Map<String, IosBridgeValue>,
         isScreenView: Boolean,
+        needsTranslation: Boolean,
         event: Event,
     ) {
-        tracked += Tracked(name, parameters, isScreenView, event)
+        tracked += Tracked(name, parameters, isScreenView, needsTranslation, event)
     }
 
     override fun set(name: String, value: IosBridgeValue, isUserProperty: Boolean) {

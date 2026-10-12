@@ -3,12 +3,12 @@
 package io.github.mkhytarmkhoian.herald.kmp.appsflyer
 
 import io.github.mkhytarmkhoian.herald.kmp.AnalyticsValue
-import io.github.mkhytarmkhoian.herald.kmp.Event
+import io.github.mkhytarmkhoian.herald.kmp.IosVendorEvent
 import kotlin.experimental.ExperimentalObjCName
 import kotlin.native.ObjCName
 
 // herald-ios-appsflyer has classes with these names too, so Swift sees these with
-// "Kotlin" in front.
+// "Kotlin" in front. IosVendorEvent tells the bridge the app must translate them.
 
 @ObjCName(swiftName = "KotlinAppsFlyerPurchaseEvent")
 public actual class AppsFlyerPurchaseEvent internal constructor(
@@ -20,7 +20,7 @@ public actual class AppsFlyerPurchaseEvent internal constructor(
     public actual val quantity: Int?,
     public actual val orderId: String?,
     actual override val parameters: Map<String, AnalyticsValue>,
-) : Event
+) : IosVendorEvent
 
 @ObjCName(swiftName = "KotlinAppsFlyerSubscribeEvent")
 public actual class AppsFlyerSubscribeEvent internal constructor(
@@ -28,7 +28,7 @@ public actual class AppsFlyerSubscribeEvent internal constructor(
     public actual val revenue: Double,
     public actual val currency: String,
     actual override val parameters: Map<String, AnalyticsValue>,
-) : Event
+) : IosVendorEvent
 
 @ObjCName(swiftName = "KotlinAppsFlyerAdRevenueEvent")
 public actual class AppsFlyerAdRevenueEvent internal constructor(
@@ -38,7 +38,7 @@ public actual class AppsFlyerAdRevenueEvent internal constructor(
     public actual val revenue: Double,
     public actual val currency: String,
     actual override val parameters: Map<String, AnalyticsValue>,
-) : Event
+) : IosVendorEvent
 
 public actual enum class MediationNetwork {
     IRONSOURCE,

@@ -12,11 +12,11 @@ final class HeraldKmpBridge: NSObject, IosHeraldBridge {
 
     func track(
         name: String, parameters: [String: IosBridgeValue], isScreenView: Bool,
-        event: any KotlinEvent
+        needsTranslation: Bool, event: any KotlinEvent
     ) {
         bridge.track(
             name: name, parameters: parameters.mapValues(Self.value), isScreenView: isScreenView,
-            kotlinEvent: event)
+            needsTranslation: needsTranslation, kotlinEvent: event)
     }
 
     func set(name: String, value: IosBridgeValue, isUserProperty: Bool) {
