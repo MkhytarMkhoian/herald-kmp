@@ -10,7 +10,7 @@
 
 Herald is an analytics library for mobile apps. Your app describes what happened as an event, and
 Herald sends that event to every analytics service you use: Firebase, Adjust, Mixpanel, AppsFlyer,
-Amplitude, or one you build yourself.
+Amplitude, Meta, or one you build yourself.
 
 This repository is **Herald for Kotlin Multiplatform**: write your events once, in shared Kotlin,
 and track them from shared view models. It wraps the two native SDKs, so each platform keeps its
@@ -45,8 +45,8 @@ kotlin {
 }
 ```
 
-For revenue, add the vendor's module too: `herald-kmp-amplitude`, `herald-kmp-adjust` or
-`herald-kmp-appsflyer`, in `commonMain` and in `export(...)`.
+For revenue, add the vendor's module too: `herald-kmp-amplitude`, `herald-kmp-adjust`,
+`herald-kmp-appsflyer` or `herald-kmp-meta`, in `commonMain` and in `export(...)`.
 
 ## Shared code
 

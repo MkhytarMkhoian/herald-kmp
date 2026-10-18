@@ -22,6 +22,7 @@ kotlin {
             export(project(":herald-kmp-amplitude"))
             export(project(":herald-kmp-adjust"))
             export(project(":herald-kmp-appsflyer"))
+            export(project(":herald-kmp-meta"))
         }
     }
 
@@ -31,6 +32,7 @@ kotlin {
             api(project(":herald-kmp-amplitude"))
             api(project(":herald-kmp-adjust"))
             api(project(":herald-kmp-appsflyer"))
+            api(project(":herald-kmp-meta"))
         }
         getByName("androidHostTest").dependencies {
             implementation(kotlin("test"))

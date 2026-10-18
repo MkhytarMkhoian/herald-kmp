@@ -1,0 +1,20 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <io.github.mkhytarmkhoian:herald-kmp-meta>
+final class io.github.mkhytarmkhoian.herald.kmp.meta/MetaPurchaseEvent : io.github.mkhytarmkhoian.herald.kmp/IosVendorEvent { // io.github.mkhytarmkhoian.herald.kmp.meta/MetaPurchaseEvent|null[0]
+    final val amount // io.github.mkhytarmkhoian.herald.kmp.meta/MetaPurchaseEvent.amount|{}amount[0]
+        final fun <get-amount>(): kotlin/Double // io.github.mkhytarmkhoian.herald.kmp.meta/MetaPurchaseEvent.amount.<get-amount>|<get-amount>(){}[0]
+    final val currency // io.github.mkhytarmkhoian.herald.kmp.meta/MetaPurchaseEvent.currency|{}currency[0]
+        final fun <get-currency>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.meta/MetaPurchaseEvent.currency.<get-currency>|<get-currency>(){}[0]
+    final val name // io.github.mkhytarmkhoian.herald.kmp.meta/MetaPurchaseEvent.name|{}name[0]
+        final fun <get-name>(): kotlin/String // io.github.mkhytarmkhoian.herald.kmp.meta/MetaPurchaseEvent.name.<get-name>|<get-name>(){}[0]
+    final val parameters // io.github.mkhytarmkhoian.herald.kmp.meta/MetaPurchaseEvent.parameters|{}parameters[0]
+        final fun <get-parameters>(): kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> // io.github.mkhytarmkhoian.herald.kmp.meta/MetaPurchaseEvent.parameters.<get-parameters>|<get-parameters>(){}[0]
+}
+
+final fun io.github.mkhytarmkhoian.herald.kmp.meta/metaPurchaseEvent(kotlin/String, kotlin/Double, kotlin/String, kotlin.collections/Map<kotlin/String, io.github.mkhytarmkhoian.herald.kmp/AnalyticsValue> = ...): io.github.mkhytarmkhoian.herald.kmp.meta/MetaPurchaseEvent // io.github.mkhytarmkhoian.herald.kmp.meta/metaPurchaseEvent|metaPurchaseEvent(kotlin.String;kotlin.Double;kotlin.String;kotlin.collections.Map<kotlin.String,io.github.mkhytarmkhoian.herald.kmp.AnalyticsValue>){}[0]

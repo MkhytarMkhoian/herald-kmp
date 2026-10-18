@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 1.1.0
+
+_Not released yet_
+
+ * New: `herald-kmp-meta`: Meta's purchase event for shared code, made with
+   `metaPurchaseEvent(…)`. It needs the Android SDK 1.4.0.
+
 ## Version 1.0.0
 
 _2026-10-12_
