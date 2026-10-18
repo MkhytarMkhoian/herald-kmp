@@ -8,6 +8,7 @@ import io.github.mkhytarmkhoian.herald.kmp.appsflyer.MediationNetwork
 import io.github.mkhytarmkhoian.herald.kmp.appsflyer.appsFlyerAdRevenueEvent
 import io.github.mkhytarmkhoian.herald.kmp.appsflyer.appsFlyerPurchaseEvent
 import io.github.mkhytarmkhoian.herald.kmp.appsflyer.appsFlyerSubscribeEvent
+import io.github.mkhytarmkhoian.herald.kmp.meta.metaPurchaseEvent
 import io.github.mkhytarmkhoian.herald.kmp.parameters
 
 // Written once. Each vendor gets its revenue on both platforms.
@@ -34,6 +35,7 @@ public class StoreViewModel(private val analytics: EventTrackerService) {
         analytics.track(
             appsFlyerSubscribeEvent(name = "af_subscribe", revenue = 4.99, currency = "USD"),
         )
+        analytics.track(metaPurchaseEvent(name = "purchase", amount = 4.99, currency = "USD"))
     }
 
     public suspend fun adShown() {

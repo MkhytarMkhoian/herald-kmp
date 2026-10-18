@@ -3,6 +3,7 @@ import HeraldAdjust
 import HeraldAmplitude
 import HeraldAppsFlyer
 import HeraldCore
+import HeraldMeta
 import Shared
 
 /// Turns herald-kmp's revenue events into herald-ios's, so each vendor recognises them. Copy this
@@ -47,6 +48,11 @@ func revenueEvent(from kotlinEvent: AnyObject, parameters: [String: AnalyticsVal
         return AppsFlyerAdRevenueEvent(
             name: event.name, monetizationNetwork: event.monetizationNetwork,
             mediationNetwork: network, revenue: event.revenue, currency: event.currency,
+            parameters: parameters)
+    }
+    if let event = kotlinEvent as? KotlinMetaPurchaseEvent {
+        return MetaPurchaseEvent(
+            name: event.name, amount: event.amount, currency: event.currency,
             parameters: parameters)
     }
     return nil

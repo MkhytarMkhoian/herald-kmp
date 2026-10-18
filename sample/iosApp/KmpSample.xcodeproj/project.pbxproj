@@ -10,6 +10,7 @@
 		0E28BB4F450F12244CD4E543 /* RevenueTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CE0013EAC4B67224F109BB /* RevenueTranslation.swift */; };
 		429FB824A9B5F2FE19AD8BE3 /* HeraldInterop in Frameworks */ = {isa = PBXBuildFile; productRef = 32DB2631D019FE2AECF0BCD2 /* HeraldInterop */; };
 		76773144F2D1F6A0C60971D8 /* HeraldAppsFlyer in Frameworks */ = {isa = PBXBuildFile; productRef = 62EB18C476F6C793ED60068A /* HeraldAppsFlyer */; };
+		A1E7C3D2B4F5061728394A5B /* HeraldMeta in Frameworks */ = {isa = PBXBuildFile; productRef = B2F8D4E3C5A6172839405B6C /* HeraldMeta */; };
 		7BF10B5B7020D671084EB3E3 /* HeraldKmpBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AD59C5819A5B5DCA71DADD /* HeraldKmpBridge.swift */; };
 		7F8F51B30CBB70C8A84663D4 /* HeraldCore in Frameworks */ = {isa = PBXBuildFile; productRef = 707DBD56B745142384C45B46 /* HeraldCore */; };
 		AE433BFB1BD1C52E986F9FFA /* HeraldAmplitude in Frameworks */ = {isa = PBXBuildFile; productRef = B4E594F7499EEA4538BAD3A1 /* HeraldAmplitude */; };
@@ -40,6 +41,7 @@
 				AE433BFB1BD1C52E986F9FFA /* HeraldAmplitude in Frameworks */,
 				FCD9031B612768D290AA5532 /* HeraldAdjust in Frameworks */,
 				76773144F2D1F6A0C60971D8 /* HeraldAppsFlyer in Frameworks */,
+				A1E7C3D2B4F5061728394A5B /* HeraldMeta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +99,7 @@
 				B4E594F7499EEA4538BAD3A1 /* HeraldAmplitude */,
 				565F22FF1F9FAB13DC89A9BF /* HeraldAdjust */,
 				62EB18C476F6C793ED60068A /* HeraldAppsFlyer */,
+				B2F8D4E3C5A6172839405B6C /* HeraldMeta */,
 			);
 			productName = KmpSample;
 			productReference = D8F2545D2AB3C2166351E8A1 /* KmpSample.app */;
@@ -127,6 +130,7 @@
 				5A2E5866A42820062F456A28 /* XCRemoteSwiftPackageReference "herald-ios-adjust" */,
 				8B21CB40C84352301FB93CF5 /* XCRemoteSwiftPackageReference "herald-ios-amplitude" */,
 				9E9665DE188117741FE1B7F6 /* XCRemoteSwiftPackageReference "herald-ios-appsflyer" */,
+				C3A9E5F4D6B7283940516C7D /* XCRemoteSwiftPackageReference "herald-ios-meta" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1A30F8C5D9DD8C5ABD3DBC40 /* Products */;
@@ -398,6 +402,14 @@
 				minimumVersion = 1.1.0;
 			};
 		};
+		C3A9E5F4D6B7283940516C7D /* XCRemoteSwiftPackageReference "herald-ios-meta" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MkhytarMkhoian/herald-ios-meta";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -430,6 +442,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6318F093389A65FCF23A2066 /* XCRemoteSwiftPackageReference "herald-ios" */;
 			productName = HeraldLog;
+		};
+		B2F8D4E3C5A6172839405B6C /* HeraldMeta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3A9E5F4D6B7283940516C7D /* XCRemoteSwiftPackageReference "herald-ios-meta" */;
+			productName = HeraldMeta;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

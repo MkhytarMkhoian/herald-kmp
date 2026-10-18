@@ -10,6 +10,7 @@ import io.github.mkhytarmkhoian.herald.appsflyer.AppsFlyerAdRevenueEvent
 import io.github.mkhytarmkhoian.herald.appsflyer.AppsFlyerPurchaseEvent
 import io.github.mkhytarmkhoian.herald.appsflyer.AppsFlyerSubscribeEvent
 import io.github.mkhytarmkhoian.herald.asString
+import io.github.mkhytarmkhoian.herald.meta.MetaPurchaseEvent
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -39,6 +40,9 @@ class RevenueOnAndroidTest {
         assertEquals("pro", purchase.contentId)
 
         assertIs<AppsFlyerSubscribeEvent>(tracked[3])
+
+        val meta = assertIs<MetaPurchaseEvent>(tracked[4])
+        assertEquals(4.99, meta.amount)
     }
 
     @Test

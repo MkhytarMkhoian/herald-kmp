@@ -3,6 +3,7 @@ import HeraldAmplitude
 import HeraldAppsFlyer
 import HeraldCore
 import HeraldLog
+import HeraldMeta
 
 /// Logs only herald-ios's own revenue events: the same type checks the vendors' revenue factories
 /// make, so a line here means that vendor would get it as revenue.
@@ -34,6 +35,8 @@ struct RevenueLogFactory: LogEventTrackerFactory {
         case let revenue as AppsFlyerAdRevenueEvent:
             let mediation = revenue.mediationNetwork == .applovinMax ? "AppLovin MAX" : "other"
             line = "AppsFlyer ad revenue \(revenue.name) mediation=\(mediation)"
+        case let revenue as MetaPurchaseEvent:
+            line = "Meta purchase \(revenue.name) \(revenue.amount) \(revenue.currency)"
         default:
             return .declined
         }

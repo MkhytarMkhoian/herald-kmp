@@ -2,10 +2,12 @@
 
 ## Version 1.1.0
 
-_Not released yet_
+_2026-10-18_
 
  * New: `herald-kmp-meta`: Meta's purchase event for shared code, made with
-   `metaPurchaseEvent(…)`. It needs the Android SDK 1.4.0.
+   `metaPurchaseEvent(…)`. It needs the Android SDK 1.4.0 and the iOS SDK 1.3.0, where
+   `herald-ios-meta` is.
+ * New: the sample sends a Meta purchase from shared code, and its iOS app translates it.
 
 ## Version 1.0.0
 
