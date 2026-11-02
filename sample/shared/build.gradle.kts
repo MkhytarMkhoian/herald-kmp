@@ -9,7 +9,7 @@ kotlin {
     android {
         namespace = "io.github.mkhytarmkhoian.herald.sample"
         compileSdk = 36
-        minSdk = 23
+        minSdk = 24
         withHostTestBuilder {}
         compilerOptions {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)

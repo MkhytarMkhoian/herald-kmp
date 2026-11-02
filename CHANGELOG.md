@@ -1,5 +1,14 @@
 # Change Log
 
+## Version 1.2.0
+
+_2026-11-02_
+
+ * Breaking: herald-kmp needs Android 7 (API 24) or later, up from Android 6 (API 23), as the
+   Android SDK 1.5.0 does.
+ * Upgrade: the Android SDK 1.5.0 and the iOS SDK 1.4.0. Both turn off what Meta's SDK 19 collects
+   by itself when consent is off, and the iOS SDK's Meta package needs Meta's iOS SDK 19.
+
 ## Version 1.1.0
 
 _2026-10-18_

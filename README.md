@@ -21,6 +21,7 @@ own setup and vendors:
 
 | herald-kmp | Android SDK (`herald`) | iOS SDK (`herald-ios`) |
 | --- | --- | --- |
+| 1.2.0 | 1.5.0 | 1.4.0 |
 | 1.1.0 | 1.4.0 | 1.3.0 |
 | 1.0.0 | 1.2.0 | 1.1.0 |
 
@@ -33,12 +34,12 @@ kotlin {
     listOf(iosArm64(), iosSimulatorArm64()).forEach { target ->
         target.binaries.framework {
             baseName = "Shared"
-            export("io.github.mkhytarmkhoian:herald-kmp-core:1.1.0") // so Swift can use it
+            export("io.github.mkhytarmkhoian:herald-kmp-core:1.2.0") // so Swift can use it
         }
     }
     sourceSets {
         commonMain.dependencies {
-            api("io.github.mkhytarmkhoian:herald-kmp-core:1.1.0")
+            api("io.github.mkhytarmkhoian:herald-kmp-core:1.2.0")
         }
     }
 }

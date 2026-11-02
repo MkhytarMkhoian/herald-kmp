@@ -12,7 +12,7 @@ kotlin {
     android {
         namespace = "io.github.mkhytarmkhoian.herald.kmp.appsflyer"
         compileSdk = 36
-        minSdk = 23
+        minSdk = 24
         compilerOptions {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17) // as the Android SDK
         }

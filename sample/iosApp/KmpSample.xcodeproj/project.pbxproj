@@ -375,7 +375,7 @@
 			repositoryURL = "https://github.com/MkhytarMkhoian/herald-ios-adjust";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
+				minimumVersion = 1.4.0;
 			};
 		};
 		6318F093389A65FCF23A2066 /* XCRemoteSwiftPackageReference "herald-ios" */ = {
@@ -383,7 +383,7 @@
 			repositoryURL = "https://github.com/MkhytarMkhoian/herald-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
+				minimumVersion = 1.4.0;
 			};
 		};
 		8B21CB40C84352301FB93CF5 /* XCRemoteSwiftPackageReference "herald-ios-amplitude" */ = {
@@ -391,7 +391,7 @@
 			repositoryURL = "https://github.com/MkhytarMkhoian/herald-ios-amplitude";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
+				minimumVersion = 1.4.0;
 			};
 		};
 		9E9665DE188117741FE1B7F6 /* XCRemoteSwiftPackageReference "herald-ios-appsflyer" */ = {
@@ -399,7 +399,7 @@
 			repositoryURL = "https://github.com/MkhytarMkhoian/herald-ios-appsflyer";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
+				minimumVersion = 1.4.0;
 			};
 		};
 		C3A9E5F4D6B7283940516C7D /* XCRemoteSwiftPackageReference "herald-ios-meta" */ = {
@@ -407,7 +407,7 @@
 			repositoryURL = "https://github.com/MkhytarMkhoian/herald-ios-meta";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.0;
+				minimumVersion = 1.4.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

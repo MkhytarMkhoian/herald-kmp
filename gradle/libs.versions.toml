@@ -6,7 +6,7 @@ dokka = "2.2.0"
 binary-compatibility-validator = "0.18.2"
 coroutines = "1.11.0"
 # The native SDKs that herald-kmp wraps: herald on Android and the JVM, herald-ios on iOS.
-herald-android = "1.4.0"
+herald-android = "1.5.0"
 
 [libraries]
 herald-android-core = { module = "io.github.mkhytarmkhoian:herald-core", version.ref = "herald-android" }
