@@ -1,6 +1,6 @@
 [versions]
-kotlin = "2.4.20"
-agp = "9.4.0"
+kotlin = "2.4.21"
+agp = "9.5.0"
 maven-publish = "0.37.0"
 dokka = "2.2.0"
 binary-compatibility-validator = "0.18.2"
